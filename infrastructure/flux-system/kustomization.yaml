@@ -4,3 +4,5 @@ resources:
   - helmrelease.sealed-secrets.yaml
   - secret.pek-webhook.sealed.yaml
   - provider.pek-webhook.yaml
+  - alert-error.pek-webhook.yaml
+  - alert-info.pek-webhook.yaml
