@@ -6,3 +6,4 @@ resources:
   - provider.pek-webhook.yaml
   - alert-error.pek-webhook.yaml
   - alert-info.pek-webhook.yaml
+  - secret.star-pekware-club.sealed.yaml
