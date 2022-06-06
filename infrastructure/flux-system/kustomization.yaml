@@ -9,3 +9,4 @@ resources:
   - secret.star-pekware-club.sealed.yaml
   - ingress.flux-webhook-receiver.yaml
   - secret.flux-webhook-receiver-token.sealed.yaml
+  - receiver.flux-webhook-receiver.yaml
