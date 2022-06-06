@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - helmrelease.sealed-secrets.yaml
   - secret.pek-webhook.sealed.yaml
+  - provider.pek-webhook.yaml
