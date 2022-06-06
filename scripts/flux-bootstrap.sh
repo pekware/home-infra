@@ -5,4 +5,5 @@ flux bootstrap gitlab \
   --repository=home-infra \
   --branch=main \
   --path=clusters/k3s-home \
-  --token-auth
+  --token-auth \
+  --network-policy=false
