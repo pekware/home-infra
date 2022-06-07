@@ -5,3 +5,4 @@ resources:
   - podinfo.yaml
   - sealed-secrets.yaml
   - gitea.yaml
+  - nfs-subdir-external-provisioner.yaml
