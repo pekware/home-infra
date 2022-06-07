@@ -1,0 +1,82 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: gitea
+  namespace: gitea
+spec:
+  interval: 5m4s
+  chart:
+    spec:
+      chart: gitea
+      version: '5.0.8'
+      sourceRef:
+        kind: HelmRepository
+        name: gitea
+        ## namespace where HelmRepository lives
+        namespace: flux-system
+      interval: 5m5s
+
+  values:
+    image:
+      tag: "1.16.8"
+
+    service:
+      http:
+        port: 3000
+
+      ssh:
+        type: NodePort
+        port: 222
+        nodePort: 32500
+
+    ingress:
+      enabled: true
+      hosts:
+        - host: gitea.pekware.club
+          paths:
+            - path: /
+              pathType: Prefix
+      tls:
+       - secretName: star.pekware.club
+         hosts:
+           - gitea.pekware.club
+
+    persistence:
+      enabled: true
+      existingClaim: gitea-pvc
+
+    gitea:
+      admin:
+        existingSecret: gitea-admin-secret
+        email: "king.phil@gmail.com"
+
+      # https://docs.gitea.io/en-us/config-cheat-sheet/
+      config:
+        database:
+          DB_TYPE: mysql
+          HOST: mysql:3306
+          NAME: gitea
+          USER: pek
+          #PASSWD:
+          SCHEMA: gitea
+        ### see Response from failing Gitea webhooks
+        ### '''Delivery: Post "https://drone.pekware.xyz/hook?secret=Cf8Km8iYMhgS6hKb4dlOUG7875Wd0SMh": dial tcp 172.16.0.176:443: webhook can only call allowed HTTP servers (check your webhook.ALLOWED_HOST_LIST setting), deny 'drone.pekware.xyz(172.16.0.176:443)''''
+        ### https://docs.gitea.io/en-us/config-cheat-sheet/#webhook-webhook
+        webhook:
+          ALLOWED_HOST_LIST: '*'
+
+        # DEFAULT
+        RUN_MODE: dev
+        APP_NAME: "Gitea (pek 1905): Git with a cup of tea"
+
+        server:
+          #SSH_PORT: 222
+          PROTOCOL: http
+
+      livenessProbe:
+        tcpSocket:
+          port: http
+
+      readinessProbe:
+        tcpSocket:
+          port: http

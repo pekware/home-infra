@@ -1,0 +1,17 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: gitea
+  namespace: gitea
+spec:
+  values:
+    image:
+      repository: gitea/gitea
+      tag: "1.16.8"
+      rootless: true
+
+    memcached:
+      enabled: false
+
+    postgresql:
+      enabled: false
