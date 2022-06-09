@@ -14,16 +14,17 @@ spec:
         name: gitea
         ## namespace where HelmRepository lives
         namespace: flux-system
-      interval: 5m5s
+      interval: 5m0s
 
   values:
+    clusterDomain: gitea.pekware.club
+
     image:
+      repository: gitea/gitea
       tag: "1.16.8"
+      rootless: true
 
     service:
-      http:
-        port: 3000
-
       ssh:
         type: NodePort
         port: 222
@@ -37,9 +38,9 @@ spec:
             - path: /
               pathType: Prefix
       tls:
-       - secretName: star.pekware.club
-         hosts:
-           - gitea.pekware.club
+        - secretName: star.pekware.club
+          hosts:
+            - gitea.pekware.club
 
     persistence:
       enabled: true
@@ -48,9 +49,8 @@ spec:
     gitea:
       admin:
         existingSecret: gitea-admin-secret
-        email: "king.phil@gmail.com"
+        email: king.phil@gmail.com
 
-      # https://docs.gitea.io/en-us/config-cheat-sheet/
       config:
         database:
           DB_TYPE: mysql
@@ -67,16 +67,19 @@ spec:
 
         # DEFAULT
         RUN_MODE: dev
-        APP_NAME: "Gitea (pek 1905): Git with a cup of tea"
+        APP_NAME: "Gitea: Git with a cup of tea"
+
+        repository:
+          DEFAULT_PRIVATE: private
 
         server:
-          #SSH_PORT: 222
+          SSH_PORT: 222
+          ROOT_URL: https://gitea.pekware.club
           PROTOCOL: http
+          DOMAIN: gitea.pekware.club
 
-      livenessProbe:
-        tcpSocket:
-          port: http
+    memcached:
+      enabled: false
 
-      readinessProbe:
-        tcpSocket:
-          port: http
+    postgresql:
+      enabled: false
