@@ -4,7 +4,7 @@ metadata:
   name: gitea
   namespace: gitea
 resources:
-  - gitea-admin-secret.sealed.yaml
+  - sealed-secret.gitea-admin.yaml
   - ../../base/gitea
 patchesStrategicMerge:
   - values.yaml
