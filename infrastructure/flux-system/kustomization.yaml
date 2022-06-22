@@ -1,11 +1,12 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - secret.pek-webhook.sealed.yaml
+  - sealed-secret.pek-webhook.yaml
   - provider.pek-webhook.yaml
   - alert-error.pek-webhook.yaml
   - alert-info.pek-webhook.yaml
-  - secret.star-pekware-club.sealed.yaml
+  - sealed-secret.star-pekware-club.yaml
   - ingress.flux-webhook-receiver.yaml
-  - secret.flux-webhook-receiver-token.sealed.yaml
+  - sealed-secret.flux-webhook-receiver-token.yaml
   - receiver.flux-webhook-receiver.yaml
+
