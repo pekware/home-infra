@@ -7,4 +7,4 @@ resources:
   - sealed-secret.gitea-admin.yaml
   - ../../base/gitea
 patchesStrategicMerge:
-  - values.yaml
+  - release.yaml
