@@ -6,3 +6,4 @@ metadata:
 resources:
   - namespace.yaml
   - release.yaml
+  - sealed-secret.star-pekware-club.yaml
