@@ -6,6 +6,7 @@ metadata:
 resources:
   - sealed-secret.gitea-admin.yaml
   - sealed-secret.star-pekware-club.yaml
+  - pvc.yaml
   - ../../base/gitea
 patchesStrategicMerge:
   - release.yaml
