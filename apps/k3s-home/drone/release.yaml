@@ -44,3 +44,6 @@ spec:
       DRONE_GITEA_CLIENT_ID: 7e1cafe2-f8d2-4b55-8dac-1df26492ae85
       DRONE_GITEA_CLIENT_SECRET: PXoM3a91TEsu47N6bq9NJG3XSN8wslV8nUiPe6gNtnHg
       DRONE_GITEA_SERVER: https://gitea.pekware.club
+
+      DRONE_WEBHOOK_ENDPOINT: "[redacted]"
+      DRONE_WEBHOOK_SECRET: Ig@mz@QKw3jf
