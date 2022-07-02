@@ -47,3 +47,5 @@ spec:
 
       DRONE_WEBHOOK_ENDPOINT: "[redacted]"
       DRONE_WEBHOOK_SECRET: Ig@mz@QKw3jf
+
+      DRONE_USER_CREATE: "username:king.phil,admin:true"
