@@ -4,3 +4,4 @@ resources:
   - podinfo
   - gitea
   - drone
+  - drone-runner
