@@ -4,4 +4,3 @@ resources:
   - sources
   - sealed-secrets
   - flux-system
-  - nfs-subdir-external-provisioner
