@@ -1,0 +1,73 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: gitea
+  namespace: gitea
+spec:
+  values:
+    clusterDomain: gitea.staging.pekware.club
+
+    image:
+      repository: gitea/gitea
+      # https://github.com/go-gitea/gitea/releases
+      tag: "1.16.8"
+      pullPolicy: IfNotPresent
+      rootless: true
+
+    service:
+      ssh:
+        type: NodePort
+        port: 222
+        nodePort: 32500
+
+    ingress:
+      enabled: true
+      hosts:
+        - host: gitea.staging.pekware.club
+          paths:
+            - path: /
+              pathType: Prefix
+      tls:
+        - secretName: star.pekware.club
+          hosts:
+            - gitea.staging.pekware.club
+
+    persistence:
+      enabled: false
+
+    gitea:
+      admin:
+        username: demo72
+        password: demo72
+
+      config:
+        database:
+          DB_TYPE: mysql
+          HOST: gitea-mysql:3306
+          NAME: gitea
+          USER: gitea
+          PASSWD: gitea
+          SCHEMA: gitea
+
+        RUN_MODE: dev
+        APP_NAME: "Gitea (staging): Git with a cup of tea"
+
+        repository:
+          DEFAULT_PRIVATE: private
+
+        server:
+          SSH_PORT: 222
+          ROOT_URL: https://gitea.staging.pekware.club
+          PROTOCOL: http
+          DOMAIN: gitea.staging.pekware.club
+
+    memcached:
+      enabled: false
+
+    postgresql:
+      enabled: false
+
+    mysql:
+      enabled: true
+      persistence:
+        size: 1Gi

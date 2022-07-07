@@ -4,6 +4,16 @@ metadata:
   name: gitea
   namespace: gitea
 spec:
+  interval: 5m0s
+  chart:
+    spec:
+      chart: gitea
+      version: '5.0.8'
+      sourceRef:
+        kind: HelmRepository
+        name: gitea
+        namespace: flux-system
+      interval: 5m0s
   values:
     image:
       repository: gitea/gitea
