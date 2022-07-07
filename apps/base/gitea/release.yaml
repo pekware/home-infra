@@ -8,6 +8,7 @@ spec:
   chart:
     spec:
       chart: gitea
+      # https://gitea.com/gitea/helm-chart/tags
       version: '5.0.8'
       sourceRef:
         kind: HelmRepository

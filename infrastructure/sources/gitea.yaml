@@ -4,5 +4,4 @@ metadata:
   name: gitea
 spec:
   interval: 5m
-  # https://gitea.com/gitea/helm-chart
   url: https://dl.gitea.io/charts/
