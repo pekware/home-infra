@@ -4,31 +4,8 @@ metadata:
   name: gitea
   namespace: gitea
 spec:
-  interval: 5m0s
-  chart:
-    spec:
-      chart: gitea
-      version: '5.0.8'
-      sourceRef:
-        kind: HelmRepository
-        name: gitea
-        namespace: flux-system
-      interval: 5m0s
-
   values:
     clusterDomain: gitea.pekware.club
-
-    image:
-      repository: gitea/gitea
-      tag: "1.16.8"
-      rootless: true
-
-    service:
-      ssh:
-        type: NodePort
-        port: 222
-        nodePort: 32500
-
     ingress:
       enabled: true
       hosts:
@@ -40,16 +17,13 @@ spec:
         - secretName: star.pekware.club
           hosts:
             - gitea.pekware.club
-
     persistence:
       enabled: true
       existingClaim: gitea-pvc
-
     gitea:
       admin:
         existingSecret: gitea-admin-secret
         email: king.phil@gmail.com
-
       config:
         database:
           DB_TYPE: mysql
@@ -63,22 +37,10 @@ spec:
         ### https://docs.gitea.io/en-us/config-cheat-sheet/#webhook-webhook
         webhook:
           ALLOWED_HOST_LIST: '*'
-
-        # DEFAULT
-        RUN_MODE: dev
+        RUN_MODE: prod
         APP_NAME: "Gitea: Git with a cup of tea"
-
-        repository:
-          DEFAULT_PRIVATE: private
-
         server:
           SSH_PORT: 222
           ROOT_URL: https://gitea.pekware.club
           PROTOCOL: http
           DOMAIN: gitea.pekware.club
-
-    memcached:
-      enabled: false
-
-    postgresql:
-      enabled: false
