@@ -4,6 +4,6 @@ metadata:
   name: drone-runner
   namespace: drone-runner
 resources:
-  - ../../base/drone-runner
+  - ../../base/drone-runner/
 patchesStrategicMerge:
   - release.yaml
