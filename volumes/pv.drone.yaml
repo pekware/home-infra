@@ -9,6 +9,6 @@ spec:
   accessModes:
     - ReadWriteOnce
   nfs:
-    path: "/mnt/pool/volumes/k3s-home/drone"
+    path: "/mnt/pool/volumes/production/drone"
     server: data.pekware.xyz
     readOnly: false

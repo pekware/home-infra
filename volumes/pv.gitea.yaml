@@ -9,7 +9,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   nfs:
-    path: "/mnt/pool/volumes/k3s-home/gitea"
+    path: "/mnt/pool/volumes/production/gitea"
     server: data.pekware.xyz
     readOnly: false
   claimRef:
