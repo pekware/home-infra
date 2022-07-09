@@ -7,3 +7,4 @@ resources:
   - gitea.yaml
   - nfs-subdir-external-provisioner.yaml
   - drone.yaml
+  - fluxcd.yaml
