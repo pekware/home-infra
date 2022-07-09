@@ -4,3 +4,5 @@ resources:
   - kube-prometheus-stack.yaml
   - loki-stack.yaml
   - monitoring-config.yaml
+  - sealed-secret.star-pekware-club.yaml
+  - ingress.grafana.yaml
