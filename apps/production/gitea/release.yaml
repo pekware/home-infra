@@ -39,6 +39,8 @@ spec:
           ALLOWED_HOST_LIST: '*'
         RUN_MODE: prod
         APP_NAME: "Gitea: Git with a cup of tea"
+        repository:
+          DEFAULT_BRANCH: main
         server:
           SSH_PORT: 222
           ROOT_URL: https://gitea.pekware.club
