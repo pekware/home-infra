@@ -6,6 +6,8 @@ metadata:
 spec:
     interval: 5m0s
     values:
+        nodeSelector:
+            tier: prod
         env:
             DRONE_RPC_SECRET: ENC[AES256_GCM,data:bDhZjE4dmCSIopQIxZTyOZHjMKL1So9XpRIljxS43VE=,iv:tpPAGKi9a6XYJER8MsTt3C8yKxWp9pROzu6MoSxFZ9g=,tag:p5nmgR4liUMJi/AvSGlsDg==,type:str]
             DRONE_RPC_HOST: drone.pekware.club
