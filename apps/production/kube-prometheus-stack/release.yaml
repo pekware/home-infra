@@ -4,36 +4,7 @@ metadata:
   name: kube-prometheus-stack
   namespace: monitoring
 spec:
-  interval: 5m
-  chart:
-    spec:
-      version: "35.x"
-      chart: kube-prometheus-stack
-      sourceRef:
-        kind: HelmRepository
-        name: prometheus-community
-        namespace: flux-system
-      interval: 60m
-  install:
-    crds: Create
-  upgrade:
-    crds: CreateReplace
-  # https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml
   values:
-    alertmanager:
-      enabled: false
-    prometheus:
-      prometheusSpec:
-        retention: 24h
-        resources:
-          requests:
-            cpu: 200m
-            memory: 200Mi
-        podMonitorNamespaceSelector: {}
-        podMonitorSelector:
-          matchLabels:
-            app.kubernetes.io/component: monitoring
-
     # https://github.com/grafana/helm-charts/blob/main/charts/grafana/templates/service.yaml
     grafana:
       defaultDashboardsTimezone: cdt
