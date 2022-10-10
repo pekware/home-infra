@@ -25,12 +25,7 @@ spec:
         password: demo72
       config:
         database:
-          DB_TYPE: mysql
-          HOST: gitea-mysql:3306
-          NAME: gitea
-          USER: gitea
-          PASSWD: gitea
-          SCHEMA: gitea
+          DB_TYPE: sqlite3
         RUN_MODE: dev
         APP_NAME: "Gitea (staging): Git with a cup of tea"
         server:
@@ -39,6 +34,4 @@ spec:
           PROTOCOL: http
           DOMAIN: gitea.staging.pekware.club
     mysql:
-      enabled: true
-      persistence:
-        size: 1Gi
+      enabled: false
