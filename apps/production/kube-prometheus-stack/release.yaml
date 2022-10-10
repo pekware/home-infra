@@ -33,3 +33,7 @@ spec:
         podMonitorSelector:
           matchLabels:
             app.kubernetes.io/component: monitoring
+
+    # https://github.com/grafana/helm-charts/blob/main/charts/grafana/templates/service.yaml
+    grafana:
+      defaultDashboardsTimezone: cdt
