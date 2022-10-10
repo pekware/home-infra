@@ -19,6 +19,6 @@ spec:
   tls:
   - hosts:
     - kps-grafana.staging.pekware.club
-    secretName: star.pekware.club
+    secretName: star.staging.pekware.club
 status:
   loadBalancer: {}
