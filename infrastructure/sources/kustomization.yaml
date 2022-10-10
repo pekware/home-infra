@@ -8,3 +8,4 @@ resources:
   - nfs-subdir-external-provisioner.yaml
   - drone.yaml
   - fluxcd.yaml
+  - kube-prometheus-stack.yaml
