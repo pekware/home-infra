@@ -1,0 +1,10 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: kube-prometheus-stack
+  namespace: monitoring
+spec:
+  values:
+    # https://github.com/grafana/helm-charts/blob/main/charts/grafana/templates/service.yaml
+    grafana:
+      defaultDashboardsTimezone: cdt
