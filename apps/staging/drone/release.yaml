@@ -27,7 +27,7 @@ spec:
             DRONE_GITEA_CLIENT_ID: 26aef671-a603-40e3-8f9f-e47116f79256
             DRONE_GITEA_CLIENT_SECRET: ENC[AES256_GCM,data:tLnXfsy4XwGrOlyleuBMzbPvc5MeFbHidbUmg/s2FvnEmiuvm2ybnBEMpKY=,iv:XQO/Q0F+0Yu5nx419X0yDVWdmmqrkjyX3nDEufko6eo=,tag:3PpWLgEM3WhfSVmGK1AHxQ==,type:str]
             DRONE_RPC_SECRET: ENC[AES256_GCM,data:nuqahNYU6hsA3weQsCFGXQ4Fb1MdHQlHYsDeoW6+fmM=,iv:N+M4Y1qvvDtQGpdYXDkjNszN/3eWK38KHDzPkp7hJks=,tag:Ha/ufXa6/20NygOvvWsD/w==,type:str]
-            DRONE_GITEA_SERVER: https://gitea.pekware.club
+            DRONE_GITEA_SERVER: https://gitea.staging.pekware.club
             DRONE_WEBHOOK_ENDPOINT: ENC[AES256_GCM,data:k+dK32aLRlvvduxdzosfBpMF/oc6LTTLRSbvGNhJG5YaoQ==,iv:cS2wuGe/KewbTGfaawRXfy/mC22WUYBwo4doYe1dB1I=,tag:LsGWYUWpmwh3V3dPZNy4KQ==,type:str]
             DRONE_WEBHOOK_SECRET: ENC[AES256_GCM,data:vDONMOm0tEXuq3R/FgUC,iv:nbBQt1rQIx7pJfHhQy95zjqpFQDicGfbNQ+9xLSf788=,tag:FpW3weti3r03awiPVaNwYw==,type:str]
             DRONE_USER_CREATE: username:king.phil,admin:true
