@@ -14,7 +14,7 @@ spec:
             - path: /
               pathType: Prefix
       tls:
-        - secretName: star.pekware.club
+        - secretName: star.staging.pekware.club
           hosts:
             - gitea.staging.pekware.club
     persistence:
