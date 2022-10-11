@@ -8,3 +8,12 @@ spec:
     # https://github.com/grafana/helm-charts/blob/main/charts/grafana/templates/service.yaml
     grafana:
       defaultDashboardsTimezone: cdt
+      ingress:
+        enabled: true
+        hosts:
+          - kps-grafana.pekware.club
+        path: /
+        tls:
+          - secretName: star.pekware.club
+            hosts:
+              - kps-grafana.pekware.club
