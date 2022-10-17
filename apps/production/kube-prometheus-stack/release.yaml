@@ -5,6 +5,18 @@ metadata:
   namespace: monitoring
 spec:
   values:
+    alertmanager:
+      enabled: true
+      ingress:
+        enabled: true
+        hosts:
+          - kps-alertmanager.pekware.club
+        paths:
+          - /
+        tls:
+          - secretName: star.pekware.club
+            hosts:
+              - kps-alertmanager.pekware.club
     grafana:
       defaultDashboardsTimezone: cdt
       ingress:
