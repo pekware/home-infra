@@ -28,3 +28,20 @@ spec:
           - secretName: star.pekware.club
             hosts:
               - kps-grafana.pekware.club
+    prometheus:
+      ingress:
+        enabled: true
+        hosts:
+          - kps-prometheus.pekware.club
+        paths:
+          - /
+        tls:
+          - secretName: star.pekware.club
+            hosts:
+              - kps-prometheus.pekware.club
+      prometheusSpec:
+        retention: 24h
+        resources:
+          requests:
+            cpu: 200m
+            memory: 200Mi
