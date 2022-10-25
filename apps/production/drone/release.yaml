@@ -16,8 +16,6 @@ spec:
                 - secretName: star.pekware.club
                   hosts:
                     - drone.pekware.club
-        nodeSelector:
-            tier: prod
         persistentVolume:
             existingClaim: drone
         env:

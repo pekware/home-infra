@@ -17,8 +17,6 @@ spec:
         - secretName: star.pekware.club
           hosts:
             - gitea.pekware.club
-    nodeSelector:
-      tier: prod
     persistence:
       enabled: true
       existingClaim: gitea-pvc
