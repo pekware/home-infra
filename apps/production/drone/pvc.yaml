@@ -4,7 +4,7 @@ metadata:
   name: drone
   namespace: drone
 spec:
-  storageClassName: nfs-client
+  storageClassName: nfs-client-retain
   accessModes:
     - ReadWriteOnce
   resources:
