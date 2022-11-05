@@ -18,6 +18,18 @@ spec:
   interval: 1h0m0s
   values:
     nfs:
-      path: /mnt/pool/volumes
+      path: /mnt/pool/volumes/production/
       server: data.pekware.xyz
 
+    storageClass:
+      name: nfs-client-retain
+
+      ## Retain or Delete
+      reclaimPolicy: Retain
+
+      archiveOnDelete: false
+
+      ## delete or retain (pertains to directory)
+      onDelete: retain
+
+      pathPattern: ${.PVC.namespace}/${.PVC.name}
