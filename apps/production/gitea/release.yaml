@@ -19,7 +19,7 @@ spec:
             - gitea.pekware.club
     persistence:
       enabled: true
-      existingClaim: gitea-pvc
+      existingClaim: gitea
     gitea:
       admin:
         existingSecret: gitea-admin-secret

@@ -1,11 +1,10 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: gitea-pvc
+  name: gitea
   namespace: gitea
 spec:
-  storageClassName: nfs-client
-  volumeName: gitea-pv
+  storageClassName: nfs-client-persist
   accessModes:
     - ReadWriteOnce
   resources:
