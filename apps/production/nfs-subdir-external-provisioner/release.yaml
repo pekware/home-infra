@@ -22,10 +22,10 @@ spec:
       server: data.pekware.xyz
 
     storageClass:
-      name: nfs-client-retain
+      name: nfs-client-persist
 
       ## Retain or Delete
-      reclaimPolicy: Retain
+      reclaimPolicy: Delete
 
       archiveOnDelete: false
 
