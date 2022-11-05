@@ -5,7 +5,7 @@ source:
 	flux reconcile source git flux-system
 
 .PHONY: apps
-apps:
+apps: source
 	flux reconcile kustomization apps
 
 .PHONY: suspend
