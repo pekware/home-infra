@@ -3,5 +3,5 @@ kind: HelmRepository
 metadata:
   name: gitea
 spec:
-  interval: 5m
+  interval: 120m
   url: https://dl.gitea.io/charts/
