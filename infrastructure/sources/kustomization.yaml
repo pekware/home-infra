@@ -9,3 +9,4 @@ resources:
   - drone.yaml
   - fluxcd.yaml
   - kube-prometheus-stack.yaml
+  - ingress-nginx.yaml
