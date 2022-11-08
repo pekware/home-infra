@@ -4,7 +4,7 @@ metadata:
     name: drone
     namespace: drone
 spec:
-    interval: 5m0s
+    interval: 2h
     chart:
         spec:
             chart: drone
@@ -12,7 +12,7 @@ spec:
                 kind: HelmRepository
                 name: drone
                 namespace: flux-system
-            interval: 5m0s
+            interval: 2h
     values:
         image:
             repository: drone/drone

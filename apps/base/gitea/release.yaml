@@ -4,7 +4,7 @@ metadata:
   name: gitea
   namespace: gitea
 spec:
-  interval: 5m0s
+  interval: 2h
   chart:
     spec:
       chart: gitea
@@ -14,7 +14,7 @@ spec:
         kind: HelmRepository
         name: gitea
         namespace: flux-system
-      interval: 5m0s
+      interval: 2h
   values:
     image:
       repository: gitea/gitea

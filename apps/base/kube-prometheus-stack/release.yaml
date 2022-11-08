@@ -4,7 +4,7 @@ metadata:
   name: kube-prometheus-stack
   namespace: monitoring
 spec:
-  interval: 5m
+  interval: 2h
   chart:
     spec:
       # https://artifacthub.io/packages/helm/prometheus-community/kube-prometheus-stack
@@ -14,7 +14,7 @@ spec:
         kind: HelmRepository
         name: prometheus-community
         namespace: flux-system
-      interval: 60m
+      interval: 2h
   install:
     crds: Create
   upgrade:

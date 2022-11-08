@@ -15,7 +15,7 @@ spec:
         namespace: flux-system
       # https://artifacthub.io/packages/helm/nfs-subdir-external-provisioner/nfs-subdir-external-provisioner
       version: '4.x'
-  interval: 1h0m0s
+  interval: 2h
   values:
     nfs:
       path: /mnt/pool/volumes/production/
