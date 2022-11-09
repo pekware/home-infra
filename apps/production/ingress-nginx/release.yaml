@@ -34,3 +34,6 @@ spec:
       # on baremetal, disabled
       service: ## L443
         enabled: false
+
+    tcp:
+      "222": "gitea/gitea-ssh:222"
