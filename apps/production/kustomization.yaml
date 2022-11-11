@@ -7,5 +7,5 @@ resources:
   - gitea/
   - drone/
   - drone-runner/
-  - kube-prometheus-stack/
+  #- kube-prometheus-stack/
   - ingress-nginx/
