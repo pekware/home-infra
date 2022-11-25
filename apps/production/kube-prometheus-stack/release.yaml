@@ -5,6 +5,9 @@ metadata:
   namespace: monitoring
 spec:
   values:
+    ## L138
+    ## https://github.com/fluxcd/flux2/blob/main/manifests/monitoring/kube-prometheus-stack/release.yaml
+    ## https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml
     alertmanager:
       enabled: true
       ingress:
@@ -17,6 +20,9 @@ spec:
           - secretName: star.pekware.club
             hosts:
               - kps-alertmanager.pekware.club
+
+    ## L711
+    ## https://github.com/grafana/helm-charts/blob/main/charts/grafana/templates/service.yaml
     grafana:
       defaultDashboardsTimezone: cdt
       ingress:
@@ -28,6 +34,8 @@ spec:
           - secretName: star.pekware.club
             hosts:
               - kps-grafana.pekware.club
+
+    ## L1909
     prometheus:
       ingress:
         enabled: true
@@ -39,6 +47,8 @@ spec:
           - secretName: star.pekware.club
             hosts:
               - kps-prometheus.pekware.club
+
+      ## L2282
       prometheusSpec:
         retention: 24h
         resources:
