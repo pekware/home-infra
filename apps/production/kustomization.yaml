@@ -6,6 +6,7 @@ resources:
   - podinfo/
   - gitea/
   - drone/
+  - drone-runner-docker/
   #- drone-runner/
   #- kube-prometheus-stack/
   - ingress-nginx/

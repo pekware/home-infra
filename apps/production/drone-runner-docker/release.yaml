@@ -1,0 +1,54 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+    name: drone-runner-docker
+    namespace: drone-runner-docker
+spec:
+    interval: 2h
+    chart:
+        spec:
+            chart: drone-runner-docker
+            sourceRef:
+                kind: HelmRepository
+                name: drone
+                namespace: flux-system
+            interval: 2h
+    values:
+        image:
+            ## https://hub.docker.com/r/drone/drone-runner-docker/tags?page=1
+            tag: "1.8"
+        env:
+            DRONE_RPC_HOST: drone.pekware.club
+            DRONE_RPC_PROTO: https
+            DRONE_RPC_SECRET: ENC[AES256_GCM,data:WQW4JSbSkVw8CYVcbkn5oYg5+iNx0wpd3F0SI9fvAcg=,iv:8SqgeRSfeWJtWmnAqQ1nmZ4YZmNZSr4UJqAEVdI+X0A=,tag:5tCcW+Muo0BU45uAoDG3Qw==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2022-11-25T14:48:15Z"
+    mac: ENC[AES256_GCM,data:f9LdKYBGRuOc6hs+PKcPHOalhbbLL8yIHbov6jjFlHOBPpcZkcmaA4KcfVroChnNOSAXJtXpoeW9NKwcMtjpics5M8H7KXj4Qd0xYQuBjCFz+5eAhCzJEN7cUEe0k7UOwUjJwFehN4bbxuWX0jtbQsjuPi2d4oX/BEhUp0Th5iU=,iv:Yc9zEKOPAR2bvGBRIiq8DfJVoh5uvPQRgHmMiGSuNEI=,tag:KEDWhmEvlrd/GV63pbWSZg==,type:str]
+    pgp:
+        - created_at: "2022-11-25T14:48:14Z"
+          enc: |
+            -----BEGIN PGP MESSAGE-----
+
+            hQIMA39JIzDKQyQnARAApUf6cEfTVrV687AWlLdw4vO9IytgWcJ71exy32+dx+J1
+            YQphN79FhXpg0D3mM7iaBsRZMibGem+TJdgwXZvSgPiMDaNCF6zI38nvvDgu1IBG
+            307c301JER1wMafW5TIQPRMpZPXuji9nKfiql0L+Y/iwTiHY7wvaCPFuJtgu0+ZX
+            Caa27FYQxllrkdwyZsodZcVluOkt73b6T93DTEqpZ3v0ByawiBA1qMKfaPPi5+tx
+            fdq4rXiZxxqNGpBmuaz5ybz4iEiCLZoiNv1ucSXE5k1HMe+hAcPV4BLWKhvXjH4h
+            C8xhBaISTgVYcHduktmgeQ8nf3wNDns0/8CgFDLPkSrNMZMWWL+AINUGvtkoFkl3
+            cTdJfGq5mntDAhtcZ0WVPvtkZ6yGHX+xJtCuJO/H7RNavhuFeqlC3SJzQQidAUxS
+            Z7wqTZQf+sJfC0cNmVLdZuNR+jDjL/ibpvXM08MH1hfpCa2uF089P0yOukJx+Ij3
+            CrtFwEQXVe3xdFrNBgvB8tkUjStT+0xJrMHrqplEiW464RLlNGGKnCwthEdAj/Qz
+            OwggtcSyC/U1j8hUBpaOJ/uU3fJwsdkYonTv9nBLiSU2yDn/10AWEgEzGPAB49Ig
+            IHYqOclH1BsotmPRZwhdncq1Fga+raGCjLnlXfkHsz9x1FJi/U8WTXUK8RQQkVrS
+            XgGAM4Gw52wsH0FuiWo+CI7t5J50KV7eBw5vKZRgrDhc2+9V4LEsDddbEWECviPc
+            gclmAnGH2Onf92UdNkHCxNR9lOh5fhRQsV+D1hRgq3461nRy18EzewD1RkYrt0c=
+            =mhm2
+            -----END PGP MESSAGE-----
+          fp: 2BBD3786044CFFE0260484332213C1FB5FFCB338
+    encrypted_regex: ^DRONE_RPC_SECRET$
+    version: 3.7.3
