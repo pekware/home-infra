@@ -15,3 +15,7 @@ suspend:
 .PHONY: resume
 resume:
 	flux resume source git flux-system
+
+.PHONY: k3d-cluster-create
+k3d-cluster-create:
+	KUBECONFIG=$$HOME/.kube/k3d k3d cluster create staging --config misc/k3d.yaml

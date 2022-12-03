@@ -1,0 +1,13 @@
+apiVersion: k3d.io/v1alpha4
+kind: Simple
+ports:
+  - port: 443:443
+    nodeFilters:
+      - loadbalancer
+  - port: 222:222
+    nodeFilters:
+      - loadbalancer
+options:
+  kubeconfig:
+    updateDefaultKubeconfig: true
+    switchCurrentContext: true
