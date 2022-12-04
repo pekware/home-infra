@@ -16,7 +16,7 @@ spec:
                     - path: /
                       pathType: Prefix
             tls:
-                - secretName: star.pekware.club
+                - secretName: star.staging.pekware.club
                   hosts:
                     - drone.staging.pekware.club
         persistentVolume:
