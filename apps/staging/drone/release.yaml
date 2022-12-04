@@ -6,7 +6,8 @@ metadata:
 spec:
     values:
         image:
-            tag: 2.12.1
+            # https://github.com/harness/drone/releases
+            tag: 2.15.0
         ingress:
             enabled: true
             hosts:
