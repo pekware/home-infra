@@ -11,7 +11,7 @@ spec:
     branch: main
   secretRef:
     name: flux-system
-  url: https://gitlab.pekware.xyz/maestro/home-infra.git
+  url: https://github.com/kingphil/home-infra.git
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
