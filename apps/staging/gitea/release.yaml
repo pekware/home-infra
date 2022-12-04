@@ -5,6 +5,9 @@ metadata:
   namespace: gitea
 spec:
   values:
+    image:
+      # https://github.com/go-gitea/gitea/releases
+      tag: "1.17.3"
     clusterDomain: gitea.staging.pekware.club
     ingress:
       enabled: true
