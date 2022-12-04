@@ -3,5 +3,4 @@ kind: Kustomization
 resources:
   - gitea/
   - drone/
-  - drone-runner/
   - kube-prometheus-stack/
