@@ -7,4 +7,3 @@ resources:
   - drone/
   - drone-runner-docker/
   #- kube-prometheus-stack/
-  - ingress-nginx/
