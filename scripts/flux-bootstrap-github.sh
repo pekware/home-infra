@@ -1,4 +1,5 @@
 CONTEXT=${1:-staging}
+kubectl create -f $HOME/_scratch/_flux_bootstrap/$CONTEXT
 flux bootstrap github \
   --owner=kingphil \
   --repository=home-infra \
