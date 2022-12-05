@@ -4,3 +4,4 @@ resources:
   - gitea/
   - drone/
   - kube-prometheus-stack/
+  - nfs-subdir-external-provisioner/
