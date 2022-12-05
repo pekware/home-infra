@@ -4,6 +4,12 @@ metadata:
   name: gitea
   namespace: gitea
 spec:
+  dependsOn:
+    - name: ingress-nginx
+      namespace: ingress-nginx
+  install:
+    remediation:
+      retries: 3
   values:
     image:
       # https://github.com/go-gitea/gitea/releases
