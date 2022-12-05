@@ -3,5 +3,5 @@ kind: Kustomization
 resources:
   - gitea/
   - drone/
-  - kube-prometheus-stack/
   - nfs-subdir-external-provisioner/
+  ##- kube-prometheus-stack/
