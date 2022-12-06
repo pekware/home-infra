@@ -27,7 +27,8 @@ spec:
           hosts:
             - gitea.staging.pekware.club
     persistence:
-      enabled: false
+      enabled: true
+      existingClaim: gitea
     gitea:
       admin:
         username: demo72
