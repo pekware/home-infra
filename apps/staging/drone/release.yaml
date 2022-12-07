@@ -31,40 +31,40 @@ spec:
             DRONE_SERVER_HOST: drone.staging.pekware.club
             DRONE_SERVER_PROTO: https
             # https://docs.drone.io/server/provider/gitea/
-            DRONE_GITEA_CLIENT_ID: 26aef671-a603-40e3-8f9f-e47116f79256
-            DRONE_GITEA_CLIENT_SECRET: ENC[AES256_GCM,data:tLnXfsy4XwGrOlyleuBMzbPvc5MeFbHidbUmg/s2FvnEmiuvm2ybnBEMpKY=,iv:XQO/Q0F+0Yu5nx419X0yDVWdmmqrkjyX3nDEufko6eo=,tag:3PpWLgEM3WhfSVmGK1AHxQ==,type:str]
-            DRONE_RPC_SECRET: ENC[AES256_GCM,data:nuqahNYU6hsA3weQsCFGXQ4Fb1MdHQlHYsDeoW6+fmM=,iv:N+M4Y1qvvDtQGpdYXDkjNszN/3eWK38KHDzPkp7hJks=,tag:Ha/ufXa6/20NygOvvWsD/w==,type:str]
+            DRONE_GITEA_CLIENT_ID: fdbde4bc-c1d6-4fc7-9fba-6cd72c1f8bca
+            DRONE_GITEA_CLIENT_SECRET: ENC[AES256_GCM,data:G4FMpKDWOSJUIs6luGbtBfPnBPyxqyEUsnCeG+fDk7vqp8JFVoYUglLJ4PG7rldS1/vTBqeiBXo=,iv:QfLxP6m84w0MGIzfb7MNFn2CKECmuzprKMM8O/oZ5rc=,tag:UFoQRdChHaxLzHrX3gyxYg==,type:str]
             DRONE_GITEA_SERVER: https://gitea.staging.pekware.club
-            DRONE_WEBHOOK_ENDPOINT: ENC[AES256_GCM,data:k+dK32aLRlvvduxdzosfBpMF/oc6LTTLRSbvGNhJG5YaoQ==,iv:cS2wuGe/KewbTGfaawRXfy/mC22WUYBwo4doYe1dB1I=,tag:LsGWYUWpmwh3V3dPZNy4KQ==,type:str]
-            DRONE_WEBHOOK_SECRET: ENC[AES256_GCM,data:vDONMOm0tEXuq3R/FgUC,iv:nbBQt1rQIx7pJfHhQy95zjqpFQDicGfbNQ+9xLSf788=,tag:FpW3weti3r03awiPVaNwYw==,type:str]
             DRONE_USER_CREATE: username:king.phil,admin:true
+            DRONE_RPC_SECRET: ENC[AES256_GCM,data:fXzzcz7yNK/tndynX8C3HgfZYKkuvoiZrZ/Gz6FLBC0=,iv:UidN3WtbH5xtXbRLmoLOYiD/jDdJQpUmkgGGx9y2oiA=,tag:Db/QgRbMr8R87EUEXrv8iw==,type:str]
+            DRONE_WEBHOOK_ENDPOINT: ENC[AES256_GCM,data:Tp5lmRbukMnTp0grBxCG0gUFmZFmPl62XYLverpUnOYwGA==,iv:+sLuBt8etwRMTK0Ecl2bLOtYyyiRrxtBfb0tcKAriuE=,tag:Hf1iREpv8H4lrKdK07OTOQ==,type:str]
+            DRONE_WEBHOOK_SECRET: ENC[AES256_GCM,data:nknmL1b/6Z3X0rzuk/Jx,iv:aNHE4V3J+/G64oM0+anMjlXSCNXWUVDfvHN2TtxMlh8=,tag:mpuTtdx33QbVyiLRgTvZgg==,type:str]
 sops:
     kms: []
     gcp_kms: []
     azure_kv: []
     hc_vault: []
     age: []
-    lastmodified: "2022-07-05T21:10:50Z"
-    mac: ENC[AES256_GCM,data:pGD4NLxAs/yhzmNTXL6evmjyd3M3rgJL3AVzNwt2CworvLdeDLESHGjX2lYPDaSl43M3ov7v7dknkJcOEzuGVjqnwDrIKXJ6Pg9HplzKtuoCDYFd+9GSHZ1mhX66MvHKYBNLD8tyPo32oDwPpXZmSjvGcz/D+D89QhH53pPec04=,iv:p4bPUt6ivGqzQbTNDKcKC2JUskZNS/5J57XODh9eVIE=,tag:lSPuy5l4kAWr3dkPSlzYOA==,type:str]
+    lastmodified: "2022-12-07T01:08:08Z"
+    mac: ENC[AES256_GCM,data:MaZhdfCM7oIWJrLOr2w2DiPIS3RgKp7aQXYgASNIkgghCqHAmNyIYXPkGyRB2N1T0IY4eNorjiM9Txyydmj1413L+GAIG+ZA3lmoNjN2WTwZVPwZTPu/Rolvzzjp3MC+tyDsi+YzQ8jtF9o6T5MM3nmwYW7yag42l2YLqMxMIUA=,iv:gdwzZkw8B5VoEXDWclNjFRcPFn9FswwJdryqzWFIlhY=,tag:YLV15gtSWtYFDTQ78+8+2w==,type:str]
     pgp:
-        - created_at: "2022-07-05T21:10:50Z"
+        - created_at: "2022-12-07T01:08:07Z"
           enc: |
             -----BEGIN PGP MESSAGE-----
 
-            hQIMA39JIzDKQyQnARAAzFqQYOCid+/mExD9QPI553RAPv/DkmWH1Zs67Ry1BdKF
-            /VBTr/prTJmMXgS8OovwGb5zPgQKb33rLgSay+YUpkC2zozGmBSODkAmtmzG95O4
-            K/G+skhdsIde0idAxJRRdKYXQmQjMWR8G2LY7jshbch4A1iWqi9I96ZBzrrJzW5C
-            QmDo+FtIb3rShq4Dmv3a8vKM90r+R+4Bw1DTlp8tuox7YHR/mpy6+BWZfOaq8UB4
-            GVBfkmSC8gB0i1kiUVco/vOJO/lujM1adyvAmyIeiJuiuQ7yX/KlDuHrIO370lrM
-            TNwSz9HpR0cQ4MMil3jLyjWg3zxSukyDqUh7Blf7Ugn9vFq2rbijO6Q2jKg18M8m
-            UhfUPWtIQ5SeHsDCcDL1aQ98bRtpolONTJgrjMCFzjrSYEqXsUp3el/779iNQZR9
-            VRbZr449bhLAtBCxWaWKj12k5vrN79qM3RGf+p2t21VL75jfSkpd/q2kKVfMBGGu
-            xv2h5T/vwF4JASXuy0rFR0piWtezn38rWRYS9lW4cwXy7CS/PedR1DgG1q7cSEaR
-            eWtUtuWtx2/mL/jtnywTb7KGG/uoy0nxtGHGn/QoiLpnmIrp+sxh6Edgk1QcqXac
-            6ZTxTmP5N//BtrMpkGOuGPRSpnUBdLn3BpZT4cGkAgcQRNXArJ6+uE8zoRva3T3S
-            XgFEQ4uGicfmgIQSDrDeW+1fJTCHDL4u2J0cRqQCVQbTAEA+6wB5FhQK5z1QvVJh
-            dhplkm+ZzuetR8p/kKWWPR0wDw8MZM2AwqutHNJ/qKlB+al1n9S5bYaMfPGXKIs=
-            =o1qL
+            hQIMA39JIzDKQyQnARAAgt7ZTERlgQWIotQo4OGSedCibjBZy+4n8+2zzugNm19f
+            OPvdf6AYHoH5sEPyEvYmfvYz4V/1MdNPblUc/xWtpCaTltkBSz09ZdZ4aS5U5idQ
+            PQ62WbZIqb7DWRyM/WL2aNnAmJDngKzSChkfE+8eE7/Vi15WuNvt5s+JdGznfr4v
+            0RYN0HcbGZk4iN7OL+UmEHmhxt2ptYD790u1vemF/dchUxJYc02WNb84LGFEqlUr
+            peIK4f/hny4Tpyuk/LoQPUyzOtK1oGV7/Z3b4z/SpFIs+soJc4998gxzUnjkRuHp
+            pp+1Rzta6hHls/dwN2gsZO9fWeIRdZKMK6SXrv5OSQGimyYQW4dCAP7sSBf6+E3s
+            hDHQxL2vQpsG3A6RGial/CfC287BRKLW5TvRnr7w/fU6os4v24Mgfs7QWreC5VP5
+            DW1nlJ5DxaVUhG6bk24UOpgZAOQG9ODReQ+NweVMhwzzKNY+SlxCyN2xqB8YhhOE
+            oyW3TljwiKtS44bh0BL2QhJpvaGGl34CzSMLSOm82Rf8PUbYu9DGZSaiUh8Fn4wU
+            oI4uk5bux0XiRuZn2Mj56yHn9pwIaHtsotktXC4/T6dfG6KbJpqnSaNCmKVtf7Dm
+            h3yJcZq49jF87Fg3Pi9kJ66Urhnv2ehkNtvCikLkstssbTnhCCIuF2iJHIENf3TS
+            XgHHAinEZwRqEWMI7MnFb3XlCXv20qnfUfQJVN+pLTMwWC6D+IA4N06M/HtQmTkH
+            g5ty0rmKJFlsBwSwuDzBsJnAS7ESeeZ9lWyd6ELxE2I4eaX+Im96SjgjMGGX1Fo=
+            =KoFI
             -----END PGP MESSAGE-----
           fp: 2BBD3786044CFFE0260484332213C1FB5FFCB338
     encrypted_regex: ^DRONE_(WEBHOOK_\w*?|\w*_SECRET)$
