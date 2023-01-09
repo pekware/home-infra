@@ -5,7 +5,7 @@ metadata:
   namespace: gitea
 resources:
   - ../../base/gitea/
-  - sealed-secret.star-staging-pekware-club.yaml
+  - sealed-secret.star.staging.pekware.club.yaml
   - pvc.yaml
 patchesStrategicMerge:
   - release.yaml
