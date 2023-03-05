@@ -4,6 +4,9 @@ metadata:
   name: kube-prometheus-stack
   namespace: monitoring
 spec:
+  dependsOn:
+  - name: ingress-nginx
+    namespace: ingress-nginx
   interval: 2h
   chart:
     spec:
