@@ -4,12 +4,6 @@ metadata:
     name: drone
     namespace: drone
 spec:
-    dependsOn:
-        - name: ingress-nginx
-          namespace: ingress-nginx
-    install:
-        remediation:
-            retries: 3
     values:
         image:
             # https://github.com/harness/drone/releases

@@ -4,6 +4,12 @@ metadata:
     name: drone
     namespace: drone
 spec:
+    dependsOn:
+        - name: ingress-nginx
+          namespace: ingress-nginx
+    install:
+        remediation:
+            retries: 3
     interval: 2h
     chart:
         spec:
