@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: flux-system
+resources:
+  - podinfo.yaml
+  - sealed-secrets.yaml
+  - gitea.yaml
+  - nfs-subdir-external-provisioner.yaml
+  - drone.yaml
+  - fluxcd.yaml
+  - kube-prometheus-stack.yaml
+  - ingress-nginx.yaml
