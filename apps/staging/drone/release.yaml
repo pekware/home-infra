@@ -7,7 +7,7 @@ spec:
     values:
         image:
             # https://github.com/harness/drone/releases
-            tag: 2.15.0
+            tag: 2.16.0
         ingress:
             enabled: true
             hosts:

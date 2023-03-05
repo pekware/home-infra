@@ -7,7 +7,7 @@ spec:
   values:
     image:
       # https://github.com/go-gitea/gitea/releases
-      tag: "1.17.3"
+      tag: "1.18.5"
     clusterDomain: gitea.staging.pekware.club
     ingress:
       enabled: true
