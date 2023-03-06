@@ -14,6 +14,8 @@ spec:
     chart:
         spec:
             chart: drone
+            # https://artifacthub.io/packages/helm/drone/drone
+            version: "0.6.x"
             sourceRef:
                 kind: HelmRepository
                 name: drone
