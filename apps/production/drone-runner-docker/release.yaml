@@ -8,6 +8,8 @@ spec:
     chart:
         spec:
             chart: drone-runner-docker
+            # https://artifacthub.io/packages/helm/drone/drone
+            version: "0.6.x"
             sourceRef:
                 kind: HelmRepository
                 name: drone
@@ -16,7 +18,8 @@ spec:
     values:
         image:
             ## https://hub.docker.com/r/drone/drone-runner-docker/tags?page=1
-            tag: "1.8"
+            ## https://github.com/drone/charts/blob/master/charts/drone-runner-docker/values.yaml
+            tag: 1.8.1
         env:
             DRONE_RPC_HOST: drone.pekware.club
             DRONE_RPC_PROTO: https
