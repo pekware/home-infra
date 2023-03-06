@@ -35,5 +35,5 @@ spec:
       service: ## L443
         enabled: false
 
-    # tcp:
-    #   "222": "gitea/gitea-ssh:222"
+    tcp:
+      "222": "gitea/gitea-ssh:222"
