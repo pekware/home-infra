@@ -5,23 +5,9 @@ metadata:
     namespace: gitlab-runner
 spec:
     values:
-        image:
-            # https://hub.docker.com/r/gitlab/gitlab-runner/tags
-            registry: docker.io
-            image: gitlab/gitlab-runner
-            tag: alpine
-        imagePullPolicy: IfNotPresent
         gitlabUrl: https://gitlab.com/
         ## "group runner" for gitlab.com/pekware/: https://docs.gitlab.com/ee/ci/runners/runners_scope.html#group-runners
         runnerRegistrationToken: ENC[AES256_GCM,data:DiOvWxUNMQkpov5lCi/sYubrdCCiXEVKSt2jKpU=,iv:ZxJXXM7RFEnRj0pCHNlQEM+1aBsJIlnFZtrxZjNc9S4=,tag:emjbGVA2suqJK6LSNlHk/w==,type:str]
-        rbac:
-            create: true
-        runners:
-            config: |
-                [[runners]]
-                  [runners.kubernetes]
-                    image = "ubuntu:22.04"
-            executor: kubernetes
 sops:
     kms: []
     gcp_kms: []

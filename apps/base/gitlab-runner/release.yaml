@@ -18,3 +18,18 @@ spec:
                 name: gitlab-runner
                 namespace: gitlab-runner
             interval: 2h
+    values:
+        image:
+            # https://hub.docker.com/r/gitlab/gitlab-runner/tags
+            registry: docker.io
+            image: gitlab/gitlab-runner
+            tag: alpine
+        imagePullPolicy: IfNotPresent
+        rbac:
+            create: true
+        runners:
+            config: |
+                [[runners]]
+                  [runners.kubernetes]
+                    image = "ubuntu:22.04"
+            executor: kubernetes
