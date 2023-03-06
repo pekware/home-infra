@@ -6,4 +6,4 @@ resources:
   - drone/
   - drone-runner-docker/
   - kube-prometheus-stack/
-  - gitlab-runner/
+  #- gitlab-runner/
