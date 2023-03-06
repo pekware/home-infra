@@ -9,7 +9,7 @@ spec:
             # https://hub.docker.com/r/gitlab/gitlab-runner/tags
             registry: docker.io
             image: gitlab/gitlab-runner
-            tag: alpine3.15
+            tag: alpine
         imagePullPolicy: IfNotPresent
         gitlabUrl: https://gitlab.com/
         ## "group runner" for gitlab.com/pekware/: https://docs.gitlab.com/ee/ci/runners/runners_scope.html#group-runners
