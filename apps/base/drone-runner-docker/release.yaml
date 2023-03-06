@@ -1,0 +1,25 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+    name: drone-runner-docker
+    namespace: drone-runner-docker
+spec:
+    install:
+        remediation:
+            retries: 3
+    interval: 2h
+    chart:
+        spec:
+            chart: drone-runner-docker
+            # https://artifacthub.io/packages/helm/drone/drone
+            version: "0.6.x"
+            sourceRef:
+                kind: HelmRepository
+                name: drone
+                namespace: flux-system
+            interval: 2h
+    values:
+        image:
+            ## https://hub.docker.com/r/drone/drone-runner-docker/tags?page=1
+            ## https://github.com/drone/charts/blob/master/charts/drone-runner-docker/values.yaml
+            tag: 1.8.1
