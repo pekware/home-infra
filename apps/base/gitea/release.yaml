@@ -25,7 +25,7 @@ spec:
     image:
       repository: gitea/gitea
       # https://github.com/go-gitea/gitea/releases
-      tag: "1.17.2"
+      tag: "1.18.5"
       pullPolicy: IfNotPresent
       rootless: true
     service:
