@@ -25,5 +25,5 @@ spec:
         image:
             repository: drone/drone
             # https://github.com/harness/drone/releases
-            tag: 2.15.0
+            tag: 2.16.0
             pullPolicy: IfNotPresent
