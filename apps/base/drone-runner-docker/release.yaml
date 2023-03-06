@@ -15,8 +15,8 @@ spec:
             version: "0.6.x"
             sourceRef:
                 kind: HelmRepository
-                name: drone
-                namespace: drone
+                name: drone-runner-docker
+                namespace: drone-runner-docker
             interval: 2h
     values:
         image:
