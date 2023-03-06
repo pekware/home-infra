@@ -6,4 +6,5 @@ resources:
   - gitea/
   - drone/
   - drone-runner-docker/
+  - gitlab-runner/
   #- kube-prometheus-stack/
