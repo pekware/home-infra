@@ -4,4 +4,4 @@ namespace: podinfo
 resources:
   - ../../base/podinfo/
 patchesStrategicMerge:
-  - podinfo-values.yaml
+  - release.yaml
