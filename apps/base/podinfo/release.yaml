@@ -4,6 +4,9 @@ metadata:
   name: podinfo
   namespace: podinfo
 spec:
+  dependsOn:
+  - name: ingress-nginx
+    namespace: ingress-nginx
   releaseName: podinfo
   chart:
     spec:
