@@ -12,7 +12,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: ingress-nginx
-        namespace: flux-system
+        namespace: ingress-nginx
       ## https://artifacthub.io/packages/helm/ingress-nginx/ingress-nginx
       version: 4.5.2
   interval: 2h0m0s

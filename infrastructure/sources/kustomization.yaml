@@ -4,4 +4,3 @@ namespace: flux-system
 resources:
   - sealed-secrets.yaml
   - fluxcd.yaml
-  - ingress-nginx.yaml

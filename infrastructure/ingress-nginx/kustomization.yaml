@@ -4,5 +4,6 @@ metadata:
   name: ingress-nginx
   namespace: ingress-nginx
 resources:
+  - repository.yaml
   - namespace.yaml
   - release.yaml
