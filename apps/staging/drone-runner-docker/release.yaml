@@ -4,7 +4,6 @@ metadata:
     name: drone-runner-docker
     namespace: drone-runner-docker
 spec:
-    interval: 2h
     values:
         env:
             DRONE_RPC_HOST: drone.staging.pekware.club

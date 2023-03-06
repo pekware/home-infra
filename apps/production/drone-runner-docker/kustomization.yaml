@@ -4,5 +4,6 @@ metadata:
   name: drone-runner-docker
   namespace: drone-runner-docker
 resources:
-  - namespace.yaml
+  - ../../base/drone-runner-docker/
+patchesStrategicMerge:
   - release.yaml

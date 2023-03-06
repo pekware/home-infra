@@ -9,4 +9,3 @@ resources:
   - pvc.yaml
 patchesStrategicMerge:
   - release.yaml
-  
