@@ -30,6 +30,8 @@ spec:
       config:
         database:
           DB_TYPE: sqlite3
+        webhook:
+          ALLOWED_HOST_LIST: '*'
         RUN_MODE: dev
         APP_NAME: "Gitea (staging): Git with a cup of tea"
         server:

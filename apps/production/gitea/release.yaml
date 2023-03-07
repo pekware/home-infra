@@ -32,9 +32,6 @@ spec:
           USER: pek
           #PASSWD:
           SCHEMA: gitea
-        ### see Response from failing Gitea webhooks
-        ### '''Delivery: Post "https://drone.pekware.xyz/hook?secret=Cf8Km8iYMhgS6hKb4dlOUG7875Wd0SMh": dial tcp 172.16.0.176:443: webhook can only call allowed HTTP servers (check your webhook.ALLOWED_HOST_LIST setting), deny 'drone.pekware.xyz(172.16.0.176:443)''''
-        ### https://docs.gitea.io/en-us/config-cheat-sheet/#webhook-webhook
         webhook:
           ALLOWED_HOST_LIST: '*'
         RUN_MODE: prod
