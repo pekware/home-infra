@@ -4,6 +4,6 @@ metadata:
   name: ingress-nginx
   namespace: ingress-nginx
 resources:
-  - repository.yaml
-  - namespace.yaml
+  - ../../base/ingress-nginx/
+patchesStrategicMerge:
   - release.yaml
