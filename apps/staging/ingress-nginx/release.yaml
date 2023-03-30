@@ -23,7 +23,7 @@ spec:
         default: true
 
       kind: Deployment
-      replicaCount: 2
+      replicaCount: 1
 
       hostNetwork: false ## L98
 
