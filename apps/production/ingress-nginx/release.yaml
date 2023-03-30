@@ -22,18 +22,17 @@ spec:
       ingressClassResource: ## L107
         default: true
 
-      # run Ingress Pod on each node
-      kind: DaemonSet ## L197
+      kind: Deployment
+      replicaCount: 2
 
       hostNetwork: false ## L98
 
       hostPort: ## L93
-        enabled: true
-
-      # on legit public k8s distros, service is enabled and "type: LoadBalancer"
-      # on baremetal, disabled
-      service: ## L443
         enabled: false
+
+      service: ## L443
+        enabled: true
+        type: LoadBalancer
 
     tcp:
       "222": "gitea/gitea-ssh:222"
