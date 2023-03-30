@@ -22,4 +22,4 @@ spec:
         image:
             ## https://hub.docker.com/r/drone/drone-runner-docker/tags?page=1
             ## https://github.com/drone/charts/blob/master/charts/drone-runner-docker/values.yaml
-            tag: 1.8.1
+            tag: 1.8.3
