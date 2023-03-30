@@ -8,6 +8,7 @@ spec:
         image:
             # https://github.com/harness/drone/releases
             tag: 2.16.0
+            pullPolicy: IfNotPresent
         ingress:
             enabled: true
             hosts:
@@ -26,39 +27,39 @@ spec:
             DRONE_SERVER_PROTO: https
             # https://docs.drone.io/server/provider/gitea/
             DRONE_GITEA_CLIENT_ID: fdbde4bc-c1d6-4fc7-9fba-6cd72c1f8bca
-            DRONE_GITEA_CLIENT_SECRET: ENC[AES256_GCM,data:G4FMpKDWOSJUIs6luGbtBfPnBPyxqyEUsnCeG+fDk7vqp8JFVoYUglLJ4PG7rldS1/vTBqeiBXo=,iv:QfLxP6m84w0MGIzfb7MNFn2CKECmuzprKMM8O/oZ5rc=,tag:UFoQRdChHaxLzHrX3gyxYg==,type:str]
+            DRONE_GITEA_CLIENT_SECRET: ENC[AES256_GCM,data:E8nL2k/lp+eDTWweLyVuYNrgMWMCfVbE1K8+wgAqTIhhuh4p/rDfKLLF00vnk1EsAZILweIZZAA=,iv:RlMkubMxoeMW68QlgOaeBRqcK8kXoJO/TzpSXnnqwoQ=,tag:nAarN57D1vetPjdSgPh1cQ==,type:str]
             DRONE_GITEA_SERVER: https://gitea.staging.pekware.club
             DRONE_USER_CREATE: username:king.phil,admin:true
-            DRONE_RPC_SECRET: ENC[AES256_GCM,data:fXzzcz7yNK/tndynX8C3HgfZYKkuvoiZrZ/Gz6FLBC0=,iv:UidN3WtbH5xtXbRLmoLOYiD/jDdJQpUmkgGGx9y2oiA=,tag:Db/QgRbMr8R87EUEXrv8iw==,type:str]
-            DRONE_WEBHOOK_ENDPOINT: ENC[AES256_GCM,data:Tp5lmRbukMnTp0grBxCG0gUFmZFmPl62XYLverpUnOYwGA==,iv:+sLuBt8etwRMTK0Ecl2bLOtYyyiRrxtBfb0tcKAriuE=,tag:Hf1iREpv8H4lrKdK07OTOQ==,type:str]
-            DRONE_WEBHOOK_SECRET: ENC[AES256_GCM,data:nknmL1b/6Z3X0rzuk/Jx,iv:aNHE4V3J+/G64oM0+anMjlXSCNXWUVDfvHN2TtxMlh8=,tag:mpuTtdx33QbVyiLRgTvZgg==,type:str]
+            DRONE_RPC_SECRET: ENC[AES256_GCM,data:T6J7gaAoaBSXcnlHH+VMVjFFoIB4YvG6zFpPSCKpZzE=,iv:fmcLPjWs+1NUSGfqVYncGqztQUtHCMQXP6rc/fvIJp0=,tag:Y5zpktOvH3d2xS48SZr3vw==,type:str]
+            DRONE_WEBHOOK_ENDPOINT: ENC[AES256_GCM,data:svFARrxi6ONw+ifKW+jaeSRv+yo7zyoz/bIFDsz7sK9KbhykoGQ=,iv:ASVcA8/mE0fcI1FE51yHOSN0W/wqx+hieOqVwu/e6pQ=,tag:VaK38Xx4U2HzIKBsah/QXg==,type:str]
+            DRONE_WEBHOOK_SECRET: ENC[AES256_GCM,data:EcslUEK6v82ap7npnTHc,iv:N7TK80fn1ohZBeZHZxIfSaw0FH9dEnyMzgIP+AHqlIw=,tag:tHAdiDEnPg6pywmGjmVVVw==,type:str]
 sops:
     kms: []
     gcp_kms: []
     azure_kv: []
     hc_vault: []
     age: []
-    lastmodified: "2022-12-07T01:08:08Z"
-    mac: ENC[AES256_GCM,data:MaZhdfCM7oIWJrLOr2w2DiPIS3RgKp7aQXYgASNIkgghCqHAmNyIYXPkGyRB2N1T0IY4eNorjiM9Txyydmj1413L+GAIG+ZA3lmoNjN2WTwZVPwZTPu/Rolvzzjp3MC+tyDsi+YzQ8jtF9o6T5MM3nmwYW7yag42l2YLqMxMIUA=,iv:gdwzZkw8B5VoEXDWclNjFRcPFn9FswwJdryqzWFIlhY=,tag:YLV15gtSWtYFDTQ78+8+2w==,type:str]
+    lastmodified: "2023-03-30T19:09:07Z"
+    mac: ENC[AES256_GCM,data:L8pyVZSY4HBP9DOoC9DH1p2V7ogXJQcgEt4WZ/WqLcFgl3gVzVYqlQWJ+4DvrYCowsPfLoOEE7hRW1kXZu4t6PGKDqsu5BGdyVxHxYOmExs52IL/ZSgdwi6Cstr71RQoQV9Jod080PCoERsNLI5QrHeOBDTeQ97QU+3g6WKsnLk=,iv:C0tp2UTitu9kDLBtPje6PVQjULL+1sc3WT9xv0simKw=,tag:Su9eVaMP55w5R9oFJmdBcQ==,type:str]
     pgp:
-        - created_at: "2022-12-07T01:08:07Z"
+        - created_at: "2023-03-30T19:09:06Z"
           enc: |
             -----BEGIN PGP MESSAGE-----
 
-            hQIMA39JIzDKQyQnARAAgt7ZTERlgQWIotQo4OGSedCibjBZy+4n8+2zzugNm19f
-            OPvdf6AYHoH5sEPyEvYmfvYz4V/1MdNPblUc/xWtpCaTltkBSz09ZdZ4aS5U5idQ
-            PQ62WbZIqb7DWRyM/WL2aNnAmJDngKzSChkfE+8eE7/Vi15WuNvt5s+JdGznfr4v
-            0RYN0HcbGZk4iN7OL+UmEHmhxt2ptYD790u1vemF/dchUxJYc02WNb84LGFEqlUr
-            peIK4f/hny4Tpyuk/LoQPUyzOtK1oGV7/Z3b4z/SpFIs+soJc4998gxzUnjkRuHp
-            pp+1Rzta6hHls/dwN2gsZO9fWeIRdZKMK6SXrv5OSQGimyYQW4dCAP7sSBf6+E3s
-            hDHQxL2vQpsG3A6RGial/CfC287BRKLW5TvRnr7w/fU6os4v24Mgfs7QWreC5VP5
-            DW1nlJ5DxaVUhG6bk24UOpgZAOQG9ODReQ+NweVMhwzzKNY+SlxCyN2xqB8YhhOE
-            oyW3TljwiKtS44bh0BL2QhJpvaGGl34CzSMLSOm82Rf8PUbYu9DGZSaiUh8Fn4wU
-            oI4uk5bux0XiRuZn2Mj56yHn9pwIaHtsotktXC4/T6dfG6KbJpqnSaNCmKVtf7Dm
-            h3yJcZq49jF87Fg3Pi9kJ66Urhnv2ehkNtvCikLkstssbTnhCCIuF2iJHIENf3TS
-            XgHHAinEZwRqEWMI7MnFb3XlCXv20qnfUfQJVN+pLTMwWC6D+IA4N06M/HtQmTkH
-            g5ty0rmKJFlsBwSwuDzBsJnAS7ESeeZ9lWyd6ELxE2I4eaX+Im96SjgjMGGX1Fo=
-            =KoFI
+            hQIMA39JIzDKQyQnARAApcXNCO18l34u2nrfR4vImVuOX4VTqrNVd8On+YNSvDKX
+            xKU5Rm+Z2lHSDVGVaM2Kx0B5QAVxz3tEconCwdoyrAYPQPuWEB7PU7cspAs4Imlu
+            aTKtywlYArD5Ap1B7CJQajhtRFnKL5aJqkzoSvpMwTbuOk4KMW7o7SC7HBr80bar
+            AkIucrLwwvwWJhrEvNdlMyyVtQ6y3wkvssxnWEKFDBfdq26v4nCvWkNj4t5G8VsF
+            UHM99AWP5/bWZcSC9W+wR3fThsaaOi2FQGQAtMr7dOg4pHfYVOFHx8Pdxxrd+rHo
+            SkUDpj5/QNrPGhx34YOX/q1jVwfpg4/ge0hjYALIOeNxK+jZ7nlniZ8gECsVprpO
+            vxmZkc/J4xDhNU9+A746O/D4pDwxpDH3fYId/on+1ciGb8AJJgeZaQEiDghct8Xf
+            KZs1594cb4eHVt4YlaiBR9zJZHNRuCgq9VxkywCfAwq5+c2nPwBOmnXlk9J5vPVt
+            ngFFFZjeF6T9/AOBTurVMa/lg/FB5gAL9HW67TGbNcNzWiyWFzJglSCSP63CXT8n
+            3f1Lx/Aro5Td5Qh4qA3lTkWLGcii0V1WovSdaMSuEWhpyJ3fFzXq/TUNvARoX2D2
+            9DhE4i1FXGxOMma/R+GIGlNHhKJRK4szYQ6MRdbDcYn1FLWrdHjE5tfUhlfD1Y3S
+            XgGoVZJIbtxtjDk++Sc3GU6Tt43Afuz3WUGsJ0l+eZuYT+u+7IEhjPoZuiX+jQXR
+            US4WamGQ93Sz0HfqifjuT8wyMvrIQio7+4iWPyCHZ7iOFxYyJVDDiROxLMpAF7Y=
+            =7DVv
             -----END PGP MESSAGE-----
           fp: 2BBD3786044CFFE0260484332213C1FB5FFCB338
     encrypted_regex: ^DRONE_(WEBHOOK_\w*?|\w*_SECRET)$
