@@ -39,5 +39,7 @@ spec:
           ROOT_URL: https://gitea.staging.pekware.club
           PROTOCOL: http
           DOMAIN: gitea.staging.pekware.club
+        actions:
+          enabled: true
     mysql:
       enabled: false
