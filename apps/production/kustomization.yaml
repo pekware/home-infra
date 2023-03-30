@@ -9,3 +9,4 @@ resources:
   - drone-runner-docker/
   - gitlab-runner/
   #- kube-prometheus-stack/
+  - descheduler/
