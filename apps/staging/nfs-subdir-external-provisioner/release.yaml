@@ -7,5 +7,5 @@ metadata:
 spec:
   values:
     nfs:
-      path: /volumes/k3s-colo-single/
-      server: k8s-colo-support
+      path: /mnt/pool/volumes/staging/
+      server: data

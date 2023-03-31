@@ -8,4 +8,4 @@ spec:
   values:
     nfs:
       path: /mnt/pool/volumes/production/
-      server: data.pekware.xyz
+      server: data
