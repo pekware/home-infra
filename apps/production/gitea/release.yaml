@@ -26,14 +26,14 @@ spec:
         email: king.phil@gmail.com
       config:
         database:
-          db_type: sqlite3
+          DB_TYPE: sqlite3
         webhook:
           ALLOWED_HOST_LIST: '*'
         RUN_MODE: prod
         APP_NAME: "Gitea: Git with a cup of tea"
         repository:
           DEFAULT_BRANCH: main
-          enable_push_create_org: true
+          ENABLE_PUSH_CREATE_ORG: true
         server:
           SSH_PORT: 222
           ROOT_URL: https://gitea.pekware.club
