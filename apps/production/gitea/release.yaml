@@ -26,12 +26,7 @@ spec:
         email: king.phil@gmail.com
       config:
         database:
-          DB_TYPE: mysql
-          HOST: mysql:3306
-          NAME: gitea
-          USER: pek
-          #PASSWD:
-          SCHEMA: gitea
+          db_type: sqlite3
         webhook:
           ALLOWED_HOST_LIST: '*'
         RUN_MODE: prod
@@ -44,3 +39,5 @@ spec:
           ROOT_URL: https://gitea.pekware.club
           PROTOCOL: http
           DOMAIN: gitea.pekware.club
+    mysql:
+      enabled: false
