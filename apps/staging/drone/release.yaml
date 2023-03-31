@@ -21,7 +21,7 @@ spec:
                   hosts:
                     - drone.staging.pekware.club
         persistentVolume:
-            enabled: false
+            existingClaim: drone
         env:
             DRONE_SERVER_HOST: drone.staging.pekware.club
             DRONE_SERVER_PROTO: https
