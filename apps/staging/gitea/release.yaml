@@ -41,5 +41,7 @@ spec:
           DOMAIN: gitea.staging.pekware.club
         actions:
           enabled: true
+        repository:
+          enable_push_create_org: true
     mysql:
       enabled: false
