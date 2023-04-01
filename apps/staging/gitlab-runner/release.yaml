@@ -5,36 +5,50 @@ metadata:
     namespace: gitlab-runner
 spec:
     values:
-        gitlabUrl: https://gitlab.com/
+        image:
+            # https://hub.docker.com/r/gitlab/gitlab-runner/tags
+            registry: docker.io
+            image: gitlab/gitlab-runner
+            tag: alpine3.15
+        imagePullPolicy: IfNotPresent
+        gitlabUrl: https://gitlab.angryllama.net/
         ## "group runner" for gitlab.com/pekware/: https://docs.gitlab.com/ee/ci/runners/runners_scope.html#group-runners
-        runnerRegistrationToken: ENC[AES256_GCM,data:DiOvWxUNMQkpov5lCi/sYubrdCCiXEVKSt2jKpU=,iv:ZxJXXM7RFEnRj0pCHNlQEM+1aBsJIlnFZtrxZjNc9S4=,tag:emjbGVA2suqJK6LSNlHk/w==,type:str]
+        runnerRegistrationToken: ENC[AES256_GCM,data:IdhqfoFbD84SKgTSaDyaPYt00uxsIFJXpNbhf3Y=,iv:KSEjj6hXSFfR4d0C8LNZ7pDVhKkJ7GBg8I7t4BKby6I=,tag:S/hPsijREYQA+rFvhqMF8w==,type:str]
+        rbac:
+            create: true
+        runners:
+            config: |
+                [[runners]]
+                  [runners.kubernetes]
+                    image = "ubuntu:22.04"
+            executor: kubernetes
 sops:
     kms: []
     gcp_kms: []
     azure_kv: []
     hc_vault: []
     age: []
-    lastmodified: "2023-03-06T16:25:02Z"
-    mac: ENC[AES256_GCM,data:3af+/YPGUIZegNZkedG+G5/pYp/lOHJLonh42HpxvdmQFy56ZcGDtBFD4zwp0IENV2LpVSFBdX0IK6Od6FXcE/IVm7QZac0o4FmC8GznkbBl/bwJPitcjeXAZzZ2+J0dwAPCiUCEFahgE0lv1oDqgmlKlpRGEV2ND98bTVGp9oU=,iv:EHJSDy4fNic12YIwzMk913Q1Q6cYdpk7p9lbTcqoovc=,tag:Sd3pjMWqqz/4lZf/MpY/ZA==,type:str]
+    lastmodified: "2023-04-01T14:23:28Z"
+    mac: ENC[AES256_GCM,data:VB4ru32AuTFBF18mNML3Z4RNvOdQz4bfvL709Man9yhAGW5yNgKArp9aDGiRJvni5JxOTbHfs9wbVBLrCTqm0Nt+AUmh0qefTyIzZyn9lSLQfO7QBguR6QV2Lhs+/nSBBImTwKGrcHG3pfs86UgT286pE2xIQ2h/xT/CYkP43Wg=,iv:28gzXq1IoEmpRYi5Gug2fWuTcbqV1f4LzEe5D5Jiv6w=,tag:HGYzmRx2haE71UdGUOXJ3g==,type:str]
     pgp:
-        - created_at: "2023-03-06T16:25:01Z"
+        - created_at: "2023-04-01T14:23:27Z"
           enc: |
             -----BEGIN PGP MESSAGE-----
 
-            hQIMA39JIzDKQyQnAQ//fQi7nT61gcir0C5gk6Q6X9A6glMkkyrQyLuP+/M+g3A6
-            y09GiJrBLxpTfkVDSLE6nprIqBYGZcDQ3PYsQ2Vv1EDF9dBXCZ3RMa3J4vsKIoiQ
-            xHhTtGHs5NyZWVjXilJkR9re2YkmJb8e63Pxaoiz7E3Sc3q8cpp//y4/WCA1P7kZ
-            7Bmxhv8ymLK60WNuPI1tR8L/VbWCiVlf/ubufjUYKg+WMFRfW4RTSDc7FuKRi3Dz
-            8P0E5q9iUUrciwZsOAm5c7us30qwJ0VhTV296TRcoPcDRNpOf4Kt49aIwZIDaKov
-            jvTiDtfTUKjLxQEehhP0BkYcU1az2rJN4kMGssVJ7ZYFBIELYjczVKjaBTVoM7K9
-            VXMRe73HubVrbrxMWD9RuFTHHtrPVie18nKE2eA3l5UNMQtY48RIYhYKRnp+ULTy
-            dhURxJDMWG7ti/xMvIrtJ9g4z5fTWwLvX8JsmAGC1ys44K3YJ0h2Pi/cXZHz9c6C
-            Drnk9OrsHYRoGvOKDKQMYkB4CzPRxoMNYj02XZ3D3eI6HhbxPKcxPyDI015VvcsX
-            DddlymxSv0PhGHPq36CssRbzy8eMBQJM/MsGFKK8SQwgO+CJDLswR2FOUGUd6frq
-            AW6zzdt7loMEB/bVu0lVTBDnBXwDngQWIUFdU3gPuLuDHAlmW5WMvkre9BozCM/S
-            XAFK/5cO9mJij2Y+ZxJuDlZbXCHZ6TP7Fc2OjhMd0oEjhhr6HoAXzUB/YhFMJqRV
-            vgIaqUFR1GOmrYR+s3c7N9OXjsvpiCRrNplAhiPKfhV7cwYR4XRxSzEebtDZ
-            =HG3y
+            hQIMA39JIzDKQyQnAQ//VLH4wwkAJt83TZLQ6WOahtWmB3/jOQFERYkiynyZXBhq
+            5N6B9WQ9YcRdsNto68Mm/VyHYm61PEaho1622MDS/+YR5Hq0llvkfs0HX7KDIdVO
+            4koiRj996MtqgzxmCmoxtYEkTO1KGsSsidw8ZBV6Bng4WUd6b9ze3hLxnX25FJQ8
+            sAlp6YMBGuhU6+KguWo/3Ve8Uy9n5KS2nggHrG3H9SnW3UEUGUN+fxeZOMG+QsLp
+            X0lYgC8y+792grr1AJdsQmQWUiGim2NFnYNk5lSsKbK0Nnrpng7h3/kpOanViP7m
+            wzR3n8BWON76gZQapnt+vI6hURDyQz451bb7AwcAIb7t8T9ak8Tnb7h9xFTGijE6
+            lPfydw2zJxpNXjwzEVzUU2LDYDlQtKFlaRm29ODEUwTYlwTR1HQRRS98kNco/O1P
+            wz1iK5vLUgG8IvgtLOA5hwMfbU3uRHrlWLgGGptYjrMF7Mk1EY4r41t6Jz8TyhL1
+            f3xOxVK9LEl8gbnIwGApnCUcpCcuPP13jTOrMT28x+rv76KUEnLFpOU2BLiQVHen
+            T4QosHH2EHRUstloUPy1HbuHa18vkze7wlMWPt+aboesbKdHAFFH9JsSrrDI+K8s
+            1GabFfYQ0JeFRklhppTjnnRYPHXwKh/LEdv2HcwerN5VEbHoao4uxRnbhuXMDmzS
+            XgF9NDlVAi4c4A2/swCQbWJik/LTCdjdbW1j1e2RNWjuCFU0m70b0j725mpi8meH
+            kBtTYCIytBqzjuqrX3k3z/aynBPpiMgBU7whgaRJ1aZ9OqFlTSkkbaqh1R184iU=
+            =nBOy
             -----END PGP MESSAGE-----
           fp: 2BBD3786044CFFE0260484332213C1FB5FFCB338
     encrypted_regex: ^runnerRegistrationToken$
