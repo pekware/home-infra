@@ -1,0 +1,23 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: gitlab
+  namespace: gitlab
+spec:
+  dependsOn:
+  - name: ingress-nginx
+    namespace: ingress-nginx
+  install:
+    remediation:
+      retries: 3
+  interval: 2h
+  chart:
+    spec:
+      chart: gitlab
+      # https://artifacthub.io/packages/helm/gitlab/gitlab
+      version: "6.x"
+      sourceRef:
+        kind: HelmRepository
+        name: gitlab
+        namespace: gitlab
+      interval: 2h
