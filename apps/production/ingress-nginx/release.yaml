@@ -10,3 +10,4 @@ spec:
       replicaCount: 2
     tcp:
       "222": "gitea/gitea-ssh:222"
+      "22": "gitlab/gitlab-gitlab-shell:22"
