@@ -27,3 +27,21 @@ spec:
     gitlab-runner:
       install: true
 
+    gitlab:
+      gitaly:
+        persistence:
+          storageClass: nfs-client-persist
+          size: 50Gi
+    postgresql:
+      persistence:
+        storageClass: nfs-client-persist
+        size: 8Gi
+    minio:
+      persistence:
+        storageClass: nfs-client-persist
+        size: 10Gi
+    redis:
+      master:
+        persistence:
+          storageClass: nfs-client-persist
+          size: 5Gi
