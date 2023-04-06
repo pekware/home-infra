@@ -38,6 +38,9 @@ spec:
       webservice:
         minReplicas: 1
         maxReplicas: 1
+      kas:
+        minReplicas: 1
+        maxReplicas: 1
 
     postgresql:
       image:
