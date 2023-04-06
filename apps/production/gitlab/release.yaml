@@ -32,6 +32,9 @@ spec:
         persistence:
           storageClass: nfs-client-persist
           size: 50Gi
+      gitlab-shell:
+        minReplicas: 1
+        maxReplicas: 1
       webservice:
         minReplicas: 1
         maxReplicas: 1
