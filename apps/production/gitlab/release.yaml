@@ -58,3 +58,7 @@ spec:
         persistence:
           storageClass: nfs-client-persist
           size: 5Gi
+    registry:
+      hpa:
+        minReplicas: 1
+        maxReplicas: 1
