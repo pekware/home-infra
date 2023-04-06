@@ -8,6 +8,6 @@ resources:
   - drone/
   - drone-runner-docker/
   - gitlab-runner/
-  #- kube-prometheus-stack/
+  - kube-prometheus-stack/
   - descheduler/
   - gitlab/
