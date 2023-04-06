@@ -32,6 +32,10 @@ spec:
         persistence:
           storageClass: nfs-client-persist
           size: 50Gi
+      webservice:
+        minReplicas: 1
+        maxReplicas: 1
+
     postgresql:
       image:
         # https://hub.docker.com/r/bitnami/postgresql/tags
