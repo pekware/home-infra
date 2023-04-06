@@ -10,4 +10,4 @@ resources:
   - gitlab-runner/
   - kube-prometheus-stack/
   - descheduler/
-  - gitlab/
+  #- gitlab/
