@@ -4,7 +4,7 @@ resources:
   - ingress-nginx/
   - podinfo/
   - nfs-subdir-external-provisioner/
-  - kube-prometheus-stack/
+  #- kube-prometheus-stack/
   - gitea/
   - drone/
   - drone-runner-docker/
