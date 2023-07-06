@@ -3,5 +3,7 @@ kind: Kustomization
 resources:
   - sealed-secret.star.pekware.club.yaml
   - ../../base/kube-prometheus-stack/
-patchesStrategicMerge:
-  - release.yaml
+patches:
+  - path: release.yaml
+    target:
+      kind: HelmRelease
