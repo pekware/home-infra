@@ -7,5 +7,7 @@ resources:
   - ../../base/drone/
   - sealed-secret.star.staging.pekware.club.yaml
   - pvc.yaml
-patchesStrategicMerge:
-  - release.yaml
+patches:
+  - path: release.yaml
+    target:
+      kind: HelmRelease

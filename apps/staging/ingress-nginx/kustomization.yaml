@@ -5,5 +5,7 @@ metadata:
   namespace: ingress-nginx
 resources:
   - ../../base/ingress-nginx/
-patchesStrategicMerge:
-  - release.yaml
+patches:
+  - path: release.yaml
+    target:
+      kind: HelmRelease
