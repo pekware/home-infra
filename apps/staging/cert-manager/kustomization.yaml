@@ -8,3 +8,4 @@ resources:
   - release.yaml
   - sealed-secret.do-pac.yaml
   - clusterissuer.yaml
+  - certificate.yaml

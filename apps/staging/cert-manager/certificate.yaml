@@ -1,0 +1,15 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: acme-prod.star.codemonkeys.site
+  namespace: cert-manager
+spec:
+  secretName: acme-prod.star.codemonkeys.site
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: 'codemonkeys.site'
+  dnsNames:
+  - "codemonkeys.site"
+  - "*.codemonkeys.site"
+  - "*.devel.codemonkeys.site"
