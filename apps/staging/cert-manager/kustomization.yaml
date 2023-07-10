@@ -5,3 +5,4 @@ metadata:
   namespace: cert-manager
 resources:
   - repository.yaml
+  - release.yaml
