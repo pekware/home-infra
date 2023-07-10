@@ -4,6 +4,7 @@ metadata:
   name: cert-manager
   namespace: cert-manager
 resources:
+  - namespace.yaml
   - repository.yaml
   - release.yaml
   - sealed-secret.do-pac.yaml
