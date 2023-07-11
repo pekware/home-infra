@@ -7,3 +7,5 @@ resources:
   - sealed-secret.do-pac.yaml
   - clusterissuer.yaml
   - certificate.yaml
+  - clusterissuer-pekware.yaml
+  - certificate-pekware.yaml
