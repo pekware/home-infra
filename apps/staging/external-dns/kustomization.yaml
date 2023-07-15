@@ -7,3 +7,4 @@ resources:
   - namespace.yaml
   - repository.yaml
   - sealed-secret.do-token.yaml
+  - release.yaml
