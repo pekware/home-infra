@@ -28,7 +28,7 @@ spec:
           name: do-token
           key: do-token
 
-    logLevel: trace
+    logLevel: info
     logFormat: text
 
     sources:
