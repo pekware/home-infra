@@ -8,5 +8,9 @@ spec:
   values:
     controller:
       replicaCount: 2
+      service:
+        enabled: true
+        annotations:
+          external-dns.alpha.kubernetes.io/hostname: "ingress.staging.pekware.club"
     tcp:
       "222": "gitea/gitea-ssh:222"
