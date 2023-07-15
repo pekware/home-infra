@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - ingress-nginx/
   #- cert-manager/
+  - external-dns/
   - podinfo/
   - nfs-subdir-external-provisioner/
   #- kube-prometheus-stack/
