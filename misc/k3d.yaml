@@ -15,6 +15,9 @@ options:
     switchCurrentContext: true
   k3s:
     extraArgs:
+      - arg: --disable=traefik
+        nodeFilters:
+          - server:*
       - arg: --node-taint=node-role.kubernetes.io/control-plane:NoSchedule
         nodeFilters:
           - server:*

@@ -18,7 +18,7 @@ resume:
 
 .PHONY: k3d-cluster-create
 k3d-cluster-create:
-	KUBECONFIG=$$HOME/.kube/k3d k3d cluster create staging --config misc/k3d.yaml --k3s-arg "--disable=traefik@server:0"
+	KUBECONFIG=$$HOME/.kube/k3d k3d cluster create staging --config misc/k3d.yaml
 
 .PHONY: k3d-cluster-delete
 k3d-cluster-delete:
