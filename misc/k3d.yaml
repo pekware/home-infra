@@ -1,5 +1,7 @@
 apiVersion: k3d.io/v1alpha4
 kind: Simple
+servers: 1
+agents: 1
 ports:
   - port: 443:443
     nodeFilters:
@@ -11,3 +13,8 @@ options:
   kubeconfig:
     updateDefaultKubeconfig: true
     switchCurrentContext: true
+  k3s:
+    extraArgs:
+      - arg: --node-taint=node-role.kubernetes.io/control-plane:NoSchedule
+        nodeFilters:
+          - server:*
