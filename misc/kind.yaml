@@ -8,3 +8,6 @@ nodes:
   - containerPort: 222
     hostPort: 222
     protocol: TCP
+- role: worker
+networking:
+  disableDefaultCNI: false
