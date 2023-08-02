@@ -18,7 +18,7 @@ resume:
 
 .PHONY: k3d-cluster-create
 k3d-cluster-create:
-	KUBECONFIG=$$HOME/.kube/k3d k3d cluster create staging --config misc/k3d.yaml
+	KUBECONFIG=$$HOME/.kube/k3d k3d cluster create staging --config misc/k3d.yaml --volume "$$(pwd)/misc/calico.yaml:/var/lib/rancher/k3s/server/manifests/calico.yaml"
 
 .PHONY: k3d-cluster-delete
 k3d-cluster-delete:
