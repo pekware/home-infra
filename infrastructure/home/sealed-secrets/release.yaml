@@ -20,3 +20,5 @@ spec:
   releaseName: sealed-secrets-controller
   upgrade:
     crds: CreateReplace
+  values:
+    secretName: sealed-secrets-key
