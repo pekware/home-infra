@@ -3,4 +3,7 @@ kind: Kustomization
 resources:
   - ../../base/external-dns/
   - sealed.secret.do-token.yaml
-  - release.yaml
+patches:
+  - path: release.yaml
+    target:
+      kind: HelmRelease

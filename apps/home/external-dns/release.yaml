@@ -4,17 +4,6 @@ metadata:
   name: external-dns
   namespace: external-dns
 spec:
-  interval: 2h
-  chart:
-    spec:
-      chart: external-dns
-      # https://artifacthub.io/packages/helm/external-dns/external-dns
-      version: "1.x"
-      sourceRef:
-        kind: HelmRepository
-        name: external-dns
-        namespace: external-dns
-      interval: 2h
   values:
     domainFilters:
     - pekware.club
