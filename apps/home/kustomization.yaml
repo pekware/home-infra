@@ -4,3 +4,4 @@ resources:
   - external-dns/
   - ingress-nginx/
   - cert-manager/
+  - kube-prometheus-stack/

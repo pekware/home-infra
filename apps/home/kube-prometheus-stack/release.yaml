@@ -1,0 +1,63 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: kube-prometheus-stack
+  namespace: monitoring
+spec:
+  values:
+    ## https://github.com/fluxcd/flux2/blob/main/manifests/monitoring/kube-prometheus-stack/release.yaml
+    ## https://github.com/prometheus-community/helm-charts/blob/main/charts/kube-prometheus-stack/values.yaml
+    alertmanager:
+      enabled: true
+      ingress:
+        enabled: true
+        annotations:
+          cert-manager.io/cluster-issuer: letsencrypt-pekware
+        hosts:
+          - kps-alertmanager.home.pekware.club
+        paths:
+          - /
+        tls:
+          - secretName: kps-alertmanager.home.pekware.club
+            hosts:
+              - kps-alertmanager.home.pekware.club
+
+    ## https://github.com/grafana/helm-charts/blob/main/charts/grafana/templates/service.yaml
+    grafana:
+      defaultDashboardsTimezone: cdt
+      ingress:
+        enabled: true
+        annotations:
+          cert-manager.io/cluster-issuer: letsencrypt-pekware
+        hosts:
+          - kps-grafana.home.pekware.club
+        path: /
+        tls:
+          - secretName: kps-grafana.home.pekware.club
+            hosts:
+              - kps-grafana.home.pekware.club
+
+    prometheus:
+      ingress:
+        enabled: true
+        annotations:
+          cert-manager.io/cluster-issuer: letsencrypt-pekware
+        hosts:
+          - kps-prometheus.home.pekware.club
+        paths:
+          - /
+        tls:
+          - secretName: kps-prometheus.home.pekware.club
+            hosts:
+              - kps-prometheus.home.pekware.club
+
+      prometheusSpec:
+        retention: 24h
+        resources:
+          requests:
+            cpu: 200m
+            memory: 200Mi
+        podMonitorNamespaceSelector: {}
+        podMonitorSelector:
+          matchLabels:
+            app.kubernetes.io/component: monitoring
