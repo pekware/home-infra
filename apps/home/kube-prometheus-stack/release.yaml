@@ -36,6 +36,10 @@ spec:
           - secretName: kps-grafana.home.pekware.club
             hosts:
               - kps-grafana.home.pekware.club
+      admin:
+        existingSecret: grafana
+        userKey: admin-user
+        passwordKey: admin-password
 
     prometheus:
       ingress:
