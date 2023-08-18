@@ -6,7 +6,6 @@ metadata:
 resources:
   - namespace.yaml
   - pvc.yaml
-  - sealed.secret.star.home.pekware.club.yaml
   - sealed.secret.syncserver.yaml
   - deployment.yaml
   - svc.yaml
