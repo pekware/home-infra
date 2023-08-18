@@ -6,3 +6,4 @@ resources:
   - cert-manager/
   - kube-prometheus-stack/
   - nfs-subdir-external-provisioner/
+  - syncserver/

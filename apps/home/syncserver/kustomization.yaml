@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+metadata:
+  name: syncserver
+  namespace: syncserver
+resources:
+  - namespace.yaml
+  - pvc.yaml
+  - sealed.secret.star.home.pekware.club.yaml
+  - sealed.secret.syncserver.yaml
+  - deployment.yaml
+  - svc.yaml
+  - ingress.yaml
