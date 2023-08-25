@@ -15,7 +15,7 @@ spec:
     spec:
       chart: gitlab
       # https://artifacthub.io/packages/helm/gitlab/gitlab
-      version: "6.x"
+      version: "7.x"
       sourceRef:
         kind: HelmRepository
         name: gitlab
