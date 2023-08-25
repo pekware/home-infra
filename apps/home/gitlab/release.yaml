@@ -18,6 +18,12 @@ spec:
           enabled: true
           secretName: star.home.pekware.club
 
+    certmanager:
+      installCRDs: false
+      install: false
+      rbac:
+        create: false
+
     certmanager-issuer:
       install: false
 
