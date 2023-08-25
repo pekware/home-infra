@@ -7,3 +7,4 @@ resources:
   - kube-prometheus-stack/
   - nfs-subdir-external-provisioner/
   - syncserver/
+  - minio-operator/
