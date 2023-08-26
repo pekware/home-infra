@@ -8,7 +8,7 @@ spec:
     global:
       edition: ce
       hosts:
-        domain: home.pekware.club
+        domain: home.codemonkeys.site
       ingress:
         configureCertmanager: false
         provider: nginx
@@ -16,7 +16,7 @@ spec:
         enabled: true
         tls:
           enabled: true
-          secretName: star.home.pekware.club
+          secretName: star.home.codemonkeys.site
 
     certmanager:
       installCRDs: false

@@ -5,7 +5,7 @@ metadata:
   namespace: gitlab
 resources:
   - ../../base/gitlab/
-  - sealed.secret.star.home.pekware.club.yaml
+  - sealed.secret.star.home.codemonkeys.site.yaml
 patches:
   - path: release.yaml
     target:
