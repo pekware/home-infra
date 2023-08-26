@@ -4,3 +4,4 @@ namespace: bitnami-postgresql
 resources:
   - namespace.yaml
   - repository.yaml
+  - release.yaml
