@@ -12,3 +12,5 @@ spec:
         enabled: true
         annotations:
           external-dns.alpha.kubernetes.io/hostname: "ingress.home.pekware.club"
+    tcp:
+      "5432": "bitnami-postgresql/postgresql:5432"
