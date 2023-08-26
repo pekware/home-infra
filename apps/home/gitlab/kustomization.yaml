@@ -6,6 +6,7 @@ metadata:
 resources:
   - ../../base/gitlab/
   - sealed.secret.star.home.codemonkeys.site.yaml
+  - sealed.secret.postgresql.yaml
 patches:
   - path: release.yaml
     target:

@@ -18,6 +18,12 @@ spec:
           enabled: true
           secretName: star.home.codemonkeys.site
 
+      psql:
+        host: postgresql.bitnami-postgresql.svc.cluster.local
+        password:
+          secret: postgresql
+          key: password
+
     certmanager:
       installCRDs: false
       install: false
@@ -49,12 +55,7 @@ spec:
         maxReplicas: 1
 
     postgresql:
-      image:
-        # https://hub.docker.com/r/bitnami/postgresql/tags
-        tag: 14
-      persistence:
-        storageClass: nfs-client-persist
-        size: 8Gi
+      install: false
     minio:
       persistence:
         storageClass: nfs-client-persist
