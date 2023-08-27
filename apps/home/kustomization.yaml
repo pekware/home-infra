@@ -10,3 +10,4 @@ resources:
   - minio-operator/
   - gitlab/
   - bitnami-postgresql/
+  - bitnami-redis/
