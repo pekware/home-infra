@@ -11,3 +11,4 @@ resources:
   - gitlab/
   - bitnami-postgresql/
   - bitnami-redis/
+  - gitlab-runner/
