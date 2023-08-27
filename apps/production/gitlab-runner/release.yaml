@@ -7,6 +7,7 @@ spec:
     values:
         gitlabUrl: https://gitlab.com/
         ## "group runner" for gitlab.com/pekware/: https://docs.gitlab.com/ee/ci/runners/runners_scope.html#group-runners
+        ## https://gitlab.com/groups/pekware/-/runners
         runnerRegistrationToken: ENC[AES256_GCM,data:DiOvWxUNMQkpov5lCi/sYubrdCCiXEVKSt2jKpU=,iv:ZxJXXM7RFEnRj0pCHNlQEM+1aBsJIlnFZtrxZjNc9S4=,tag:emjbGVA2suqJK6LSNlHk/w==,type:str]
 sops:
     kms: []
