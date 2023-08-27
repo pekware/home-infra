@@ -24,6 +24,12 @@ spec:
           secret: postgresql
           key: password
 
+      redis:
+        host: redis-master.bitnami-redis.svc.cluster.local
+        password:
+          secret: redis
+          key: secret
+
     certmanager:
       installCRDs: false
       install: false
@@ -56,15 +62,13 @@ spec:
 
     postgresql:
       install: false
+    redis:
+      install: false
+
     minio:
       persistence:
         storageClass: nfs-client-persist
         size: 10Gi
-    redis:
-      master:
-        persistence:
-          storageClass: nfs-client-persist
-          size: 5Gi
     registry:
       hpa:
         minReplicas: 1
