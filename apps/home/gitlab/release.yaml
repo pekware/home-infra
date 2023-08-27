@@ -43,7 +43,7 @@ spec:
       enabled: false
 
     gitlab-runner:
-      install: true
+      install: false
 
     gitlab:
       gitaly:
