@@ -40,3 +40,18 @@ spec:
 
     buckets:
       - name: velero
+
+      ## all the "bucket" references in: https://gitlab.com/gitlab-org/charts/gitlab/-/blob/master/values.yaml
+      - name: git-lfs
+      - name: gitlab-artifacts
+      - name: gitlab-uploads
+      - name: gitlab-packages
+      - name: gitlab-mr-diffs
+      - name: gitlab-terraform-state
+      - name: gitlab-ci-secure-files
+      - name: gitlab-dependency-proxy
+      - name: gitlab-backups
+      - name: registry
+      - name: gitlab-pages
+      ## deviation from chart source; to differntiate with non-gitlab runners
+      - name: gitlab-runner-cache
