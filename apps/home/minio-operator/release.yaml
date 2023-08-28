@@ -53,5 +53,5 @@ spec:
       - name: gitlab-backups
       - name: registry
       - name: gitlab-pages
-      ## deviation from chart source; to differntiate with non-gitlab runners
+      ## deviation from chart source; to differentiate with non-gitlab runners
       - name: gitlab-runner-cache
