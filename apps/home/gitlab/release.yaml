@@ -91,6 +91,9 @@ spec:
       kas:
         minReplicas: 1
         maxReplicas: 1
+      sidekiq:
+        minReplicas: 1
+        maxReplicas: 1
 
     postgresql:
       install: false
