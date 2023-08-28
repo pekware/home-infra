@@ -18,6 +18,14 @@ spec:
           enabled: true
           secretName: star.home.codemonkeys.site
 
+      appConfig:
+        object_store:
+          enabled: true
+          proxy_download: true
+          connection:
+            secret: rails-storage
+            key: connection
+
       psql:
         host: postgresql.bitnami-postgresql.svc.cluster.local
         password:
