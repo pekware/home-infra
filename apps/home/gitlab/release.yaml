@@ -25,6 +25,27 @@ spec:
           connection:
             secret: rails-storage
             key: connection
+        lfs:
+          bucket: git-lfs
+        artifacts:
+          bucket: gitlab-artifacts
+        uploads:
+          bucket: gitlab-uploads
+        packages:
+          bucket: gitlab-packages
+        externalDiffs:
+          enabled: true
+          #when:
+          bucket: gitlab-mr-diffs
+        terraformState:
+          enabled: true
+          bucket: gitlab-terraform-state
+        ciSecureFiles:
+          enabled: true
+          bucket: gitlab-ci-secure-files
+        dependencyProxy:
+          enabled: true
+          bucket: gitlab-dependency-proxy
 
       psql:
         host: postgresql.bitnami-postgresql.svc.cluster.local
