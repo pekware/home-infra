@@ -47,6 +47,9 @@ spec:
           enabled: true
           bucket: gitlab-dependency-proxy
 
+      registry:
+        bucket: registry
+
       psql:
         host: postgresql.bitnami-postgresql.svc.cluster.local
         password:
@@ -99,6 +102,9 @@ spec:
         storageClass: nfs-client-persist
         size: 10Gi
     registry:
+      storage:
+        secret: registry-storage
+        key: config
       hpa:
         minReplicas: 1
         maxReplicas: 1
