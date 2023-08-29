@@ -18,6 +18,8 @@ spec:
           enabled: true
           secretName: star.home.codemonkeys.site
 
+      minio:
+        enabled: false
       appConfig:
         object_store:
           enabled: true
