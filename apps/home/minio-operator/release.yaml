@@ -14,7 +14,7 @@ spec:
     ingress:
       enabled: true
       annotations:
-        #nginx.ingress.kubernetes.io/proxy-body-size: 512m
+        nginx.ingress.kubernetes.io/proxy-body-size: 512m
         cert-manager.io/cluster-issuer: letsencrypt-pekware
       hosts:
         - minio.home.pekware.club
