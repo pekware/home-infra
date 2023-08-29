@@ -42,9 +42,9 @@ spec:
         terraformState:
           enabled: true
           bucket: gitlab-terraform-state
-        ciSecureFiles:
-          enabled: true
-          bucket: gitlab-ci-secure-files
+        # ciSecureFiles:
+        #   enabled: true
+        #   bucket: gitlab-ci-secure-files
         dependencyProxy:
           enabled: true
           bucket: gitlab-dependency-proxy
