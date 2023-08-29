@@ -8,3 +8,27 @@ spec:
     gitlabUrl: https://gitlab.home.codemonkeys.site/
     runners:
       secret: gitlab-runner
+
+    # https://docs.gitlab.com/charts/charts/gitlab/gitlab-runner/index.html
+    # https://docs.gitlab.com/runner/install/kubernetes.html
+
+    runners:
+      executor: kubernetes
+      cache:
+        secretName: s3access
+
+      config: |
+        [[runners]]
+          [runners.kubernetes]
+            namespace = "{{.Release.Namespace}}"
+            image = "ubuntu:22.04"
+          [runners.cache]
+            Type = "s3"
+            Path = "runner"
+            Shared = true
+            [runners.cache.s3]
+              ServerAddress = "minio.home.pekware.club"
+              BucketName = "gitlab-runner-cache"
+              BucketLocation = "us-east-1"
+              Insecure = false
+              AuthenticationType = "access-key"
