@@ -58,6 +58,9 @@ spec:
           secret: postgresql
           key: password
 
+      railsSecrets:
+        secret: rails
+
       redis:
         host: redis-master.bitnami-redis.svc.cluster.local
         password:

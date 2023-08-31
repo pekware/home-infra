@@ -11,6 +11,7 @@ resources:
   - sealed.secret.rails.minio.yaml
   - sealed.secret.registry-storage.yaml
   - sealed.secret.gitlab-runner.yaml
+  - sealed.secret.rails.yaml
 patches:
   - path: release.yaml
     target:
