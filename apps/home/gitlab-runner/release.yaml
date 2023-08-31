@@ -6,14 +6,12 @@ metadata:
 spec:
   values:
     gitlabUrl: https://gitlab.home.codemonkeys.site/
-    runners:
-      secret: gitlab-runner
 
     # https://docs.gitlab.com/charts/charts/gitlab/gitlab-runner/index.html
     # https://docs.gitlab.com/runner/install/kubernetes.html
 
     runners:
-      executor: kubernetes
+      secret: gitlab-runner
       cache:
         secretName: s3access
 
