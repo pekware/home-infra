@@ -64,6 +64,10 @@ spec:
           secret: redis
           key: secret
 
+      runner:
+        registrationToken:
+          secret: gitlab-runner
+
     certmanager:
       installCRDs: false
       install: false
