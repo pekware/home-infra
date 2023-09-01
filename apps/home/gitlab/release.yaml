@@ -4,6 +4,17 @@ metadata:
   name: gitlab
   namespace: gitlab
 spec:
+  dependsOn:
+  - name: ingress-nginx
+    namespace: ingress-nginx
+  - name: postgresql
+    namespace: bitnami-postgresql
+  - name: redis
+    namespace: bitnami-redis
+  - name: minio
+    namespace: minio-operator
+  - name: nfs-subdir-external-provisioner
+    namespace: nfs-sep
   values:
     global:
       edition: ce

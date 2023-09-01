@@ -4,9 +4,6 @@ metadata:
   name: gitlab
   namespace: gitlab
 spec:
-  dependsOn:
-  - name: ingress-nginx
-    namespace: ingress-nginx
   install:
     remediation:
       retries: 3
