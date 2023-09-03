@@ -4,6 +4,9 @@
 source:
 	flux reconcile source git flux-system
 
+infrastructure: source
+	flux reconcile kustomization infrastructure
+
 .PHONY: apps
 apps: source
 	flux reconcile kustomization apps
