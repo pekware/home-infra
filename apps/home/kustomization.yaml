@@ -12,3 +12,4 @@ resources:
   - bitnami-postgresql/
   - bitnami-redis/
   - gitlab-runner/
+  - metallb/
