@@ -1,0 +1,22 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: metallb
+  namespace: metallb
+spec:
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  interval: 2h
+  chart:
+    spec:
+      chart: metallb
+      # https://artifacthub.io/packages/helm/metallb/metallb
+      version: "0.x"
+      sourceRef:
+        kind: HelmRepository
+        name: metallb
+        namespace: metallb
+      interval: 2h
+  values:
