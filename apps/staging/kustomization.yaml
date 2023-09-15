@@ -11,3 +11,4 @@ resources:
   - drone/
   - drone-runner-docker/
   #- gitlab-runner/
+  - metallb/
