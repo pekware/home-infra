@@ -8,8 +8,8 @@ resources:
   - nfs-subdir-external-provisioner/
   - syncserver/
   - minio-operator/
-  - gitlab/
-  - bitnami-postgresql/
-  - bitnami-redis/
-  - gitlab-runner/
+  #- gitlab/
+  #- bitnami-postgresql/
+  #- bitnami-redis/
+  #- gitlab-runner/
   - metallb/
