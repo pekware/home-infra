@@ -35,3 +35,4 @@ kind-create-cluster:
 .PHONY: kind-delete-cluster
 kind-delete-cluster:
 	kind delete cluster --name development --kubeconfig $$HOME/.kube/kind
+	rm $$HOME/.kube/kind
