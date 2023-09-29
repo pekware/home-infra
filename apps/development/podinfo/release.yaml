@@ -14,6 +14,6 @@ spec:
             - path: /
               pathType: ImplementationSpecific
       tls:
-       - hosts:
-           - podinfo.staging.pekware.club
-         secretName: star.staging.pekware.club
+      - hosts:
+          - podinfo.staging.pekware.club
+        secretName: star.staging.pekware.club
