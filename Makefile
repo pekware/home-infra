@@ -30,6 +30,7 @@ k3d-cluster-delete:
 .PHONY: kind-create-cluster
 kind-create-cluster:
 	kind create cluster --name development --kubeconfig $$HOME/.kube/kind --config misc/kind.yaml
+	kubectl --kubeconfig $$HOME/.kube/kind --context kind-development create -f ./misc/development/kind/calico.yaml
 
 .PHONY: kind-delete-cluster
 kind-delete-cluster:
