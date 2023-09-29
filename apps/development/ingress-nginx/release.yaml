@@ -8,5 +8,6 @@ spec:
   values:
     controller:
       replicaCount: 1
+      hostNetwork: true
       service:
-        enabled: true
+        enabled: false
