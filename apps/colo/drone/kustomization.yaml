@@ -5,7 +5,7 @@ metadata:
   namespace: drone
 resources:
   - ../../base/drone/
-  - sealed-secret.star.pekware.club.yaml
+  - sealed.secret.star.pekware.club.yaml
   - pvc.yaml
 patches:
   - path: release.yaml
