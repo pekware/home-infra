@@ -14,3 +14,4 @@ spec:
   - "pekware.club"
   - "*.pekware.club"
   - "*.home.pekware.club"
+  - "*.development.pekware.club"
