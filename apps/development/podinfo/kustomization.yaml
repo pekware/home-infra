@@ -3,7 +3,7 @@ kind: Kustomization
 namespace: podinfo
 resources:
   - ../../base/podinfo/
-  - sealed.secret.star.staging.pekware.club.yaml
+  - sealed.secret.star.development.pekware.club.yaml
 patches:
   - path: release.yaml
     target:

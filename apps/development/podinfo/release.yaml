@@ -9,11 +9,11 @@ spec:
   values:
     ingress:
       hosts:
-        - host: podinfo.staging.pekware.club
+        - host: podinfo.development.pekware.club
           paths:
             - path: /
               pathType: ImplementationSpecific
       tls:
       - hosts:
-          - podinfo.staging.pekware.club
-        secretName: star.staging.pekware.club
+          - podinfo.development.pekware.club
+        secretName: star.development.pekware.club
