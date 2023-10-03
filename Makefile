@@ -26,6 +26,7 @@ k3d-cluster-create:
 .PHONY: k3d-cluster-delete
 k3d-cluster-delete:
 	KUBECONFIG=$$HOME/.kube/k3d k3d cluster delete staging
+	rm $$HOME/.kube/k3d
 
 .PHONY: kind-create-cluster
 kind-create-cluster:
