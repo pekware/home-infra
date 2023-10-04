@@ -21,19 +21,20 @@ resume:
 
 .PHONY: k3d-cluster-create
 k3d-cluster-create:
-	KUBECONFIG=$$HOME/.kube/k3d k3d cluster create staging --config misc/development/k3d/k3d.yaml --volume "$$(pwd)/misc/calico.yaml:/var/lib/rancher/k3s/server/manifests/calico.yaml"
+	KUBECONFIG=$$HOME/.kube/k3d k3d cluster create development --config misc/development/k3d/k3d.yaml
+	kubectl --kubeconfig $$HOME/.kube/k3d create -f ./misc/development/k3d/calico.yaml
 
 .PHONY: k3d-cluster-delete
 k3d-cluster-delete:
-	KUBECONFIG=$$HOME/.kube/k3d k3d cluster delete staging
-	rm $$HOME/.kube/k3d
+	KUBECONFIG=$$HOME/.kube/k3d k3d cluster delete development
+	rm -f $$HOME/.kube/k3d
 
 .PHONY: kind-create-cluster
 kind-create-cluster:
 	kind create cluster --name development --kubeconfig $$HOME/.kube/kind --config misc/development/kind/kind.yaml
-	kubectl --kubeconfig $$HOME/.kube/kind --context kind-development create -f ./misc/development/kind/calico.yaml
+	kubectl --kubeconfig $$HOME/.kube/kind create -f ./misc/development/kind/calico.yaml
 
 .PHONY: kind-delete-cluster
 kind-delete-cluster:
-	kind delete cluster --name development --kubeconfig $$HOME/.kube/kind
-	rm $$HOME/.kube/kind
+	KUBECONFIG=$$HOME/.kube/kind kind delete cluster --name development
+	rm -f $$HOME/.kube/kind
