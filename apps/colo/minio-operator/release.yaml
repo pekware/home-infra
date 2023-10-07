@@ -15,24 +15,21 @@ spec:
       enabled: true
       annotations:
         nginx.ingress.kubernetes.io/proxy-body-size: 512m
-        cert-manager.io/cluster-issuer: letsencrypt-pekware
       hosts:
         - minio.pekware.club
       tls:
         - hosts:
             - minio.pekware.club
-          secretName: tls.minio.pekware.club
+          secretName: star.pekware.club
 
     consoleIngress:
       enabled: true
-      annotations:
-        cert-manager.io/cluster-issuer: letsencrypt-pekware
       hosts:
         - minio-console.pekware.club
       tls:
         - hosts:
             - minio-console.pekware.club
-          secretName: tls.minio-console.pekware.club
+          secretName: star.pekware.club
 
     resources:
       requests:

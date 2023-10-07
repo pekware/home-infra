@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - ../../base/minio-operator/
   - sealed.secret.root-user.yaml
+  - sealed.secret.star.pekware.club.yaml
 patches:
   - path: release.yaml
     target:
