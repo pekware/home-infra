@@ -12,3 +12,4 @@ resources:
   - kube-prometheus-stack/
   - descheduler/
   - metallb/
+  - minio-operator/

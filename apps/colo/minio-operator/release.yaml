@@ -1,0 +1,42 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: minio
+  namespace: minio-operator
+spec:
+  values:
+    mode: standalone
+    existingSecret: root-user
+    persistence:
+      storageClass: nfs-client-persist
+      size: 50Gi
+
+    ingress:
+      enabled: true
+      annotations:
+        nginx.ingress.kubernetes.io/proxy-body-size: 512m
+        cert-manager.io/cluster-issuer: letsencrypt-pekware
+      hosts:
+        - minio.pekware.club
+      tls:
+        - hosts:
+            - minio.pekware.club
+          secretName: tls.minio.pekware.club
+
+    consoleIngress:
+      enabled: true
+      annotations:
+        cert-manager.io/cluster-issuer: letsencrypt-pekware
+      hosts:
+        - minio-console.pekware.club
+      tls:
+        - hosts:
+            - minio-console.pekware.club
+          secretName: tls.minio-console.pekware.club
+
+    resources:
+      requests:
+        memory: 1Gi
+
+    buckets:
+      - name: velero
