@@ -4,4 +4,4 @@ resources:
   - ingress-nginx/
   - podinfo/
   - csi-driver-nfs/
-  - bitnami-nginx/
+  #- bitnami-nginx/
