@@ -1,0 +1,21 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: nginx
+  namespace: bitnami-nginx
+spec:
+  values:
+    service:
+      type: ClusterIP
+
+    ingress:
+      enabled: true
+      selfSigned: false
+      hostname: nginx.development.pekware.club
+      ingressClassName: nginx
+      tls: false
+      extraTls:
+      - hosts:
+          - nginx.development.pekware.club
+        secretName: star.development.pekware.club
+    staticSitePVC: nginx
