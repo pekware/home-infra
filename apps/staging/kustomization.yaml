@@ -7,8 +7,8 @@ resources:
   - podinfo/
   - nfs-subdir-external-provisioner/
   #- kube-prometheus-stack/
-  - gitea/
-  - drone/
-  - drone-runner-docker/
+  #- gitea/
+  #- drone/
+  #- drone-runner-docker/
   #- gitlab-runner/
   - metallb/
