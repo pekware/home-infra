@@ -7,11 +7,11 @@ spec:
   chart:
     spec:
       # https://gitea.com/gitea/helm-chart/tags
-      version: "8.x"
+      version: 8.3.x
   values:
     image:
       # https://github.com/go-gitea/gitea/releases
-      tag: "1.18.5"
+      tag: 1.19.3
     clusterDomain: gitea.development.pekware.club
     ingress:
       enabled: true
