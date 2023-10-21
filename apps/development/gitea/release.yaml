@@ -35,6 +35,12 @@ spec:
       config:
         database:
           DB_TYPE: sqlite3
+        session:
+          PROVIDER: memory
+        cache:
+          ADAPTER: memory
+        queue:
+          TYPE: level
         webhook:
           ALLOWED_HOST_LIST: '*'
         RUN_MODE: dev
