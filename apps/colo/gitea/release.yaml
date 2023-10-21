@@ -5,6 +5,8 @@ metadata:
   namespace: gitea
 spec:
   values:
+    strategy:
+      type: Recreate
     clusterDomain: gitea.pekware.club
     ingress:
       enabled: true
@@ -19,7 +21,8 @@ spec:
             - gitea.pekware.club
     persistence:
       enabled: true
-      existingClaim: gitea
+      create: false
+      claimName: gitea
     gitea:
       admin:
         existingSecret: gitea-admin-secret
@@ -27,6 +30,12 @@ spec:
       config:
         database:
           DB_TYPE: sqlite3
+        session:
+          PROVIDER: memory
+        cache:
+          ADAPTER: memory
+        queue:
+          TYPE: level
         webhook:
           ALLOWED_HOST_LIST: '*'
         RUN_MODE: prod
@@ -40,4 +49,9 @@ spec:
           PROTOCOL: http
           DOMAIN: gitea.pekware.club
     mysql:
+      enabled: false
+
+    redis-cluster:
+      enabled: false
+    postgresql-ha:
       enabled: false
