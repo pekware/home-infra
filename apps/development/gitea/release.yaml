@@ -9,6 +9,8 @@ spec:
       # https://gitea.com/gitea/helm-chart/tags
       version: 9.0.x
   values:
+    strategy:
+      type: Recreate
     image:
       # https://github.com/go-gitea/gitea/releases
       tag: 1.20.1
