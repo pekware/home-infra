@@ -7,11 +7,11 @@ spec:
   chart:
     spec:
       # https://gitea.com/gitea/helm-chart/tags
-      version: 8.3.x
+      version: 9.0.x
   values:
     image:
       # https://github.com/go-gitea/gitea/releases
-      tag: 1.19.3
+      tag: 1.20.1
     clusterDomain: gitea.development.pekware.club
     ingress:
       enabled: true
@@ -26,7 +26,8 @@ spec:
             - gitea.development.pekware.club
     persistence:
       enabled: true
-      existingClaim: gitea
+      create: false
+      claimName: gitea
     gitea:
       admin:
         username: demo72
@@ -48,4 +49,9 @@ spec:
         repository:
           enable_push_create_org: true
     mysql:
+      enabled: false
+
+    redis-cluster:
+      enabled: false
+    postgresql-ha:
       enabled: false
