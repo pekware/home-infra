@@ -4,7 +4,7 @@ metadata:
   name: gitea
   namespace: gitea
 spec:
-  storageClassName: nfs-client-persist
+  storageClassName: nfs-csi-retain
   accessModes:
     - ReadWriteOnce
   resources:
