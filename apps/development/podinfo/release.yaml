@@ -9,6 +9,8 @@ spec:
   values:
     image:
       repository: ghcr.io/stefanprodan/podinfo
+      # https://github.com/stefanprodan/podinfo/releases
+      # https://hub.docker.com/r/stefanprodan/podinfo/tags
       tag: 6.0.0
       pullPolicy: IfNotPresent
     ingress:
