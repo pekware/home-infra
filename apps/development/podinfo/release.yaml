@@ -8,10 +8,10 @@ spec:
     enable: false
   values:
     image:
-      repository: ghcr.io/stefanprodan/podinfo
+      repository: ghcr.io/stefanprodan/podinfo # {"$imagepolicy": "flux-system:podinfo:name"}
       # https://github.com/stefanprodan/podinfo/releases
       # https://hub.docker.com/r/stefanprodan/podinfo/tags
-      tag: 6.0.0
+      tag: 6.0.0 # {"$imagepolicy": "flux-system:podinfo:tag"}
       pullPolicy: IfNotPresent
     ingress:
       hosts:
