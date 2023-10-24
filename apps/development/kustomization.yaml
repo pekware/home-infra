@@ -3,6 +3,6 @@ kind: Kustomization
 resources:
   - ingress-nginx/
   - podinfo/
-  - csi-driver-nfs/
+  #- csi-driver-nfs/
   #- bitnami-nginx/
   #- gitea/
