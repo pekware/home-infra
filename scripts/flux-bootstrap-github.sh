@@ -20,4 +20,5 @@ flux bootstrap github \
   --private=true \
   --personal=true \
   --token-auth \
+  --components-extra=image-reflector-controller,image-automation-controller \
   --network-policy=false
