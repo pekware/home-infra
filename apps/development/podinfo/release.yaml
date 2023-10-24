@@ -7,6 +7,10 @@ spec:
   test:
     enable: false
   values:
+    image:
+      repository: ghcr.io/stefanprodan/podinfo # {"$imagepolicy": "podinfo:podinfo:name"}
+      tag: 6.0.0 # {"$imagepolicy": "podinfo:podinfo:tag"}
+      pullPolicy: IfNotPresent
     ingress:
       hosts:
         - host: podinfo.development.pekware.club

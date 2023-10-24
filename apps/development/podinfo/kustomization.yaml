@@ -4,6 +4,9 @@ namespace: podinfo
 resources:
   - ../../base/podinfo/
   - sealed.secret.star.development.pekware.club.yaml
+  - podinfo-registry.yaml
+  - podinfo-policy.yaml
+  - flux-system-automation.yaml
 patches:
   - path: release.yaml
     target:
