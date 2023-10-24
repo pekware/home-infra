@@ -8,10 +8,10 @@ metadata:
 spec:
   interval: 1m0s
   ref:
-    branch: main
+    branch: 2023-10.gitlab
   secretRef:
     name: flux-system
-  url: https://github.com/kingphil/home-infra.git
+  url: https://gitlab.com/pekware/home-infra.git
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
