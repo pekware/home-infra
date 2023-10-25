@@ -9,7 +9,7 @@ spec:
   values:
     image:
       repository: ghcr.io/stefanprodan/podinfo # {"$imagepolicy": "podinfo:podinfo:name"}
-      tag: 6.1.8 # {"$imagepolicy": "podinfo:podinfo:tag"}
+      tag: 6.2.3 # {"$imagepolicy": "podinfo:podinfo:tag"}
       pullPolicy: IfNotPresent
     ingress:
       hosts:
