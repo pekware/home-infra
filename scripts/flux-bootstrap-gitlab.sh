@@ -19,7 +19,4 @@ flux bootstrap gitlab \
   --path=clusters/$CONTEXT \
   --private=true \
   --components-extra=image-reflector-controller,image-automation-controller \
-  --read-write-key \
-  --deploy-token-auth
-
-# --deploy-token-auth: when enabled, a Project Deploy Token is generated and will be used instead of the SSH deploy token
+  --read-write-key
