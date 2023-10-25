@@ -11,7 +11,7 @@ spec:
     branch: 2023-10.gitlab
   secretRef:
     name: flux-system
-  url: https://gitlab.com/pekware/home-infra.git
+  url: ssh://git@gitlab.com/pekware/home-infra
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
