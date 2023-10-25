@@ -9,4 +9,4 @@ spec:
     name: podinfo
   policy:
     semver:
-      range: 6.3.x
+      range: 6.4.x
