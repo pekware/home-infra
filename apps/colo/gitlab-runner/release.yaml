@@ -8,35 +8,5 @@ spec:
         gitlabUrl: https://gitlab.com/
         ## "group runner" for gitlab.com/pekware/: https://docs.gitlab.com/ee/ci/runners/runners_scope.html#group-runners
         ## https://gitlab.com/groups/pekware/-/runners
-        runnerRegistrationToken: ENC[AES256_GCM,data:DiOvWxUNMQkpov5lCi/sYubrdCCiXEVKSt2jKpU=,iv:ZxJXXM7RFEnRj0pCHNlQEM+1aBsJIlnFZtrxZjNc9S4=,tag:emjbGVA2suqJK6LSNlHk/w==,type:str]
-sops:
-    kms: []
-    gcp_kms: []
-    azure_kv: []
-    hc_vault: []
-    age: []
-    lastmodified: "2023-03-06T16:25:02Z"
-    mac: ENC[AES256_GCM,data:3af+/YPGUIZegNZkedG+G5/pYp/lOHJLonh42HpxvdmQFy56ZcGDtBFD4zwp0IENV2LpVSFBdX0IK6Od6FXcE/IVm7QZac0o4FmC8GznkbBl/bwJPitcjeXAZzZ2+J0dwAPCiUCEFahgE0lv1oDqgmlKlpRGEV2ND98bTVGp9oU=,iv:EHJSDy4fNic12YIwzMk913Q1Q6cYdpk7p9lbTcqoovc=,tag:Sd3pjMWqqz/4lZf/MpY/ZA==,type:str]
-    pgp:
-        - created_at: "2023-03-06T16:25:01Z"
-          enc: |
-            -----BEGIN PGP MESSAGE-----
-
-            hQIMA39JIzDKQyQnAQ//fQi7nT61gcir0C5gk6Q6X9A6glMkkyrQyLuP+/M+g3A6
-            y09GiJrBLxpTfkVDSLE6nprIqBYGZcDQ3PYsQ2Vv1EDF9dBXCZ3RMa3J4vsKIoiQ
-            xHhTtGHs5NyZWVjXilJkR9re2YkmJb8e63Pxaoiz7E3Sc3q8cpp//y4/WCA1P7kZ
-            7Bmxhv8ymLK60WNuPI1tR8L/VbWCiVlf/ubufjUYKg+WMFRfW4RTSDc7FuKRi3Dz
-            8P0E5q9iUUrciwZsOAm5c7us30qwJ0VhTV296TRcoPcDRNpOf4Kt49aIwZIDaKov
-            jvTiDtfTUKjLxQEehhP0BkYcU1az2rJN4kMGssVJ7ZYFBIELYjczVKjaBTVoM7K9
-            VXMRe73HubVrbrxMWD9RuFTHHtrPVie18nKE2eA3l5UNMQtY48RIYhYKRnp+ULTy
-            dhURxJDMWG7ti/xMvIrtJ9g4z5fTWwLvX8JsmAGC1ys44K3YJ0h2Pi/cXZHz9c6C
-            Drnk9OrsHYRoGvOKDKQMYkB4CzPRxoMNYj02XZ3D3eI6HhbxPKcxPyDI015VvcsX
-            DddlymxSv0PhGHPq36CssRbzy8eMBQJM/MsGFKK8SQwgO+CJDLswR2FOUGUd6frq
-            AW6zzdt7loMEB/bVu0lVTBDnBXwDngQWIUFdU3gPuLuDHAlmW5WMvkre9BozCM/S
-            XAFK/5cO9mJij2Y+ZxJuDlZbXCHZ6TP7Fc2OjhMd0oEjhhr6HoAXzUB/YhFMJqRV
-            vgIaqUFR1GOmrYR+s3c7N9OXjsvpiCRrNplAhiPKfhV7cwYR4XRxSzEebtDZ
-            =HG3y
-            -----END PGP MESSAGE-----
-          fp: 2BBD3786044CFFE0260484332213C1FB5FFCB338
-    encrypted_regex: ^runnerRegistrationToken$
-    version: 3.7.3
+        runners:
+            secret: gitlab-runner

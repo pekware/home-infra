@@ -5,6 +5,7 @@ metadata:
   namespace: gitlab-runner
 resources:
   - ../../base/gitlab-runner/
+  - sealed.secret.runner-token.yaml
 patches:
   - path: release.yaml
     target:
