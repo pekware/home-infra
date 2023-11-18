@@ -5,7 +5,7 @@ metadata:
   namespace: gitlab-runner
 spec:
   values:
-    gitlabUrl: https://gitlab.home.codemonkeys.site/
+    gitlabUrl: https://gitlab.pekware.xyz/
 
     # https://docs.gitlab.com/charts/charts/gitlab/gitlab-runner/index.html
     # https://docs.gitlab.com/runner/install/kubernetes.html
@@ -25,8 +25,8 @@ spec:
             Path = "runner"
             Shared = true
             [runners.cache.s3]
-              ServerAddress = "minio.home.pekware.club"
-              BucketName = "gitlab-runner-cache"
+              ServerAddress = "gitlab.pekware.xyz"
+              BucketName = "runner-cache"
               BucketLocation = "us-east-1"
               Insecure = false
               AuthenticationType = "access-key"

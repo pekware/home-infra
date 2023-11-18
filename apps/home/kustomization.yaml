@@ -11,5 +11,5 @@ resources:
   #- gitlab/
   #- bitnami-postgresql/
   #- bitnami-redis/
-  #- gitlab-runner/
+  - gitlab-runner/
   - metallb/
