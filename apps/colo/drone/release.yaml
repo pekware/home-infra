@@ -1,29 +1,29 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-    name: drone
-    namespace: drone
+  name: drone
+  namespace: drone
 spec:
-    values:
-        ingress:
-            enabled: true
-            hosts:
-                - host: drone.pekware.club
-                  paths:
-                    - path: /
-                      pathType: Prefix
-            tls:
-                - secretName: star.pekware.club
-                  hosts:
-                    - drone.pekware.club
-        persistentVolume:
-            existingClaim: drone
-        extraSecretNamesForEnvFrom:
-        - my-drone-secrets
-        env:
-            DRONE_SERVER_HOST: drone.pekware.club
-            DRONE_SERVER_PROTO: https
-            # https://docs.drone.io/server/provider/gitea/
-            DRONE_GITEA_CLIENT_ID: a2ecffcb-6405-464f-a9f3-954a05286fbe
-            DRONE_GITEA_SERVER: https://gitea.pekware.club
-            DRONE_USER_CREATE: username:king.phil,admin:true
+  values:
+    ingress:
+      enabled: true
+      hosts:
+        - host: drone.pekware.club
+          paths:
+          - path: /
+            pathType: Prefix
+      tls:
+        - secretName: star.pekware.club
+          hosts:
+          - drone.pekware.club
+    persistentVolume:
+      existingClaim: drone
+    extraSecretNamesForEnvFrom:
+      - my-drone-secrets
+    env:
+      DRONE_SERVER_HOST: drone.pekware.club
+      DRONE_SERVER_PROTO: https
+      # https://docs.drone.io/server/provider/gitea/
+      DRONE_GITEA_CLIENT_ID: a2ecffcb-6405-464f-a9f3-954a05286fbe
+      DRONE_GITEA_SERVER: https://gitea.pekware.club
+      DRONE_USER_CREATE: username:king.phil,admin:true

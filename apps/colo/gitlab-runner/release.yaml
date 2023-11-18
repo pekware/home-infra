@@ -1,12 +1,12 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-    name: gitlab-runner
-    namespace: gitlab-runner
+  name: gitlab-runner
+  namespace: gitlab-runner
 spec:
-    values:
-        gitlabUrl: https://gitlab.com/
-        ## "group runner" for gitlab.com/pekware/: https://docs.gitlab.com/ee/ci/runners/runners_scope.html#group-runners
-        ## https://gitlab.com/groups/pekware/-/runners
-        runners:
-            secret: gitlab-runner
+  values:
+    gitlabUrl: https://gitlab.com/
+    ## "group runner" for gitlab.com/pekware/: https://docs.gitlab.com/ee/ci/runners/runners_scope.html#group-runners
+    ## https://gitlab.com/groups/pekware/-/runners
+    runners:
+      secret: gitlab-runner
