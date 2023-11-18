@@ -5,6 +5,7 @@ metadata:
   namespace: drone-runner-docker
 resources:
   - ../../base/drone-runner-docker/
+  - sealed.secret.drone.yaml
 patches:
   - path: release.yaml
     target:
