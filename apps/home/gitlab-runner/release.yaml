@@ -25,7 +25,7 @@ spec:
             Path = "runner"
             Shared = true
             [runners.cache.s3]
-              ServerAddress = "gitlab.pekware.xyz"
+              ServerAddress = "gitlab.pekware.xyz:9000"
               BucketName = "runner-cache"
               BucketLocation = "us-east-1"
               Insecure = false
