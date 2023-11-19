@@ -20,7 +20,6 @@ spec:
       tls:
         - hosts:
             - minio.pekware.club
-          secretName: star.pekware.club
 
     consoleIngress:
       enabled: true
@@ -29,7 +28,6 @@ spec:
       tls:
         - hosts:
             - minio-console.pekware.club
-          secretName: star.pekware.club
 
     resources:
       requests:
