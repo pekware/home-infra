@@ -7,4 +7,5 @@ resources:
   - sealed.secret.do-token.yaml
   - clusterissuer.codemonkeys.site.yaml
   - certificate.codemonkeys.site.yaml
-
+  - certificate-pekware.yaml
+  - clusterissuer-pekware.yaml
