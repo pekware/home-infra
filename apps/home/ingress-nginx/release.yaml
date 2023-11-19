@@ -7,6 +7,8 @@ metadata:
 spec:
   values:
     controller:
+      extraArgs:
+        default-ssl-certificate: "cert-manager/acme-prod.star.home.pekware.club"
       replicaCount: 2
       service:
         enabled: true
