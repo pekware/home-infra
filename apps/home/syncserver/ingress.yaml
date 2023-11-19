@@ -4,8 +4,6 @@ metadata:
   creationTimestamp: null
   name: syncserver
   namespace: syncserver
-  annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-pekware
 spec:
   rules:
   - host: syncserver.home.pekware.club
@@ -21,4 +19,3 @@ spec:
   tls:
   - hosts:
     - syncserver.home.pekware.club
-    secretName: tls.syncserver.home.pekware.club
