@@ -4,12 +4,12 @@
 source:
 	flux reconcile source git flux-system
 
-infrastructure: source
-	flux reconcile kustomization infrastructure
+infrastructure:
+	flux reconcile kustomization infrastructure --with-source
 
 .PHONY: apps
-apps: source
-	flux reconcile kustomization apps
+apps:
+	flux reconcile kustomization apps --with-source
 
 .PHONY: suspend
 suspend:
