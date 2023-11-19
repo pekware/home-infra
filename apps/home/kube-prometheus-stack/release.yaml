@@ -11,15 +11,12 @@ spec:
       enabled: true
       ingress:
         enabled: true
-        annotations:
-          cert-manager.io/cluster-issuer: letsencrypt-pekware
         hosts:
           - kps-alertmanager.home.pekware.club
         paths:
           - /
         tls:
-          - secretName: kps-alertmanager.home.pekware.club
-            hosts:
+          - hosts:
               - kps-alertmanager.home.pekware.club
 
     ## https://github.com/grafana/helm-charts/blob/main/charts/grafana/templates/service.yaml
@@ -27,14 +24,11 @@ spec:
       defaultDashboardsTimezone: cdt
       ingress:
         enabled: true
-        annotations:
-          cert-manager.io/cluster-issuer: letsencrypt-pekware
         hosts:
           - kps-grafana.home.pekware.club
         path: /
         tls:
-          - secretName: kps-grafana.home.pekware.club
-            hosts:
+          - hosts:
               - kps-grafana.home.pekware.club
       admin:
         existingSecret: grafana
@@ -44,15 +38,12 @@ spec:
     prometheus:
       ingress:
         enabled: true
-        annotations:
-          cert-manager.io/cluster-issuer: letsencrypt-pekware
         hosts:
           - kps-prometheus.home.pekware.club
         paths:
           - /
         tls:
-          - secretName: kps-prometheus.home.pekware.club
-            hosts:
+          - hosts:
               - kps-prometheus.home.pekware.club
 
       prometheusSpec:
