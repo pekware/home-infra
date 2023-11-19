@@ -1,17 +1,14 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: acme-prod.star.pekware.club
+  name: acme-prod.star.home.pekware.club
   namespace: cert-manager
 spec:
-  secretName: acme-prod.star.pekware.club
+  secretName: acme-prod.star.home.pekware.club
   issuerRef:
     name: letsencrypt-pekware
     kind: ClusterIssuer
-  commonName: 'pekware.club'
+  commonName: 'home.pekware.club'
   dnsNames:
-  # 'home' is temporarily getting certs on 'production' tier's behalf
-  - "pekware.club"
-  - "*.pekware.club"
+  - "home.pekware.club"
   - "*.home.pekware.club"
-  - "*.development.pekware.club"

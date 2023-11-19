@@ -20,4 +20,4 @@ spec:
             key: access-token
       selector:
         dnsZones:
-          - "pekware.club"
+          - "home.pekware.club"
