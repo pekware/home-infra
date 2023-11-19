@@ -4,6 +4,7 @@
 source:
 	flux reconcile source git flux-system
 
+.PHONY: infrastructure
 infrastructure:
 	flux reconcile kustomization infrastructure --with-source
 
