@@ -17,8 +17,7 @@ spec:
         paths:
           - /
         tls:
-          - secretName: star.pekware.club
-            hosts:
+          - hosts:
               - kps-alertmanager.pekware.club
 
     ## L711
@@ -31,8 +30,7 @@ spec:
           - kps-grafana.pekware.club
         path: /
         tls:
-          - secretName: star.pekware.club
-            hosts:
+          - hosts:
               - kps-grafana.pekware.club
 
     ## L1909
@@ -44,8 +42,7 @@ spec:
         paths:
           - /
         tls:
-          - secretName: star.pekware.club
-            hosts:
+          - hosts:
               - kps-prometheus.pekware.club
 
       ## L2282
