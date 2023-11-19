@@ -6,7 +6,7 @@ metadata:
 spec:
   values:
     domainFilters:
-    - pekware.club
+    - home.pekware.club
 
     provider: digitalocean
 
