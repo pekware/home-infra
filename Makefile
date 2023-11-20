@@ -35,6 +35,11 @@ kind-create-cluster:
 	kind create cluster --name development --kubeconfig $$HOME/.kube/kind --config misc/development/kind/kind.yaml
 	#kubectl --kubeconfig $$HOME/.kube/kind create -f ./misc/development/kind/calico.yaml
 
+.PHONY: kind-create-cluster-bleed
+kind-create-cluster-bleed:
+	# https://hub.docker.com/r/kindest/node/tags
+	kind create cluster --name development --kubeconfig $$HOME/.kube/kind --config misc/development/kind/kind.yaml --image kindest/node:v1.28.0
+
 .PHONY: kind-delete-cluster
 kind-delete-cluster:
 	KUBECONFIG=$$HOME/.kube/kind kind delete cluster --name development
