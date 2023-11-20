@@ -13,3 +13,4 @@ resources:
   #- bitnami-redis/
   - gitlab-runner/
   - metallb/
+  - csi-driver-nfs/
