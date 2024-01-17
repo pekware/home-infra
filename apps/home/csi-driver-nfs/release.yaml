@@ -6,4 +6,4 @@ metadata:
 spec:
   values:
     externalSnapshotter:
-      enabled: true
+      enabled: false
