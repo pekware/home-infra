@@ -38,7 +38,7 @@ kind-create-cluster:
 .PHONY: kind-create-cluster-bleed
 kind-create-cluster-bleed:
 	# https://hub.docker.com/r/kindest/node/tags
-	kind create cluster --name development --kubeconfig $$HOME/.kube/kind --config misc/development/kind/kind.yaml --image kindest/node:v1.29.0
+	kind create cluster --name development --kubeconfig $$HOME/.kube/kind --config misc/development/kind/kind.yaml --image kindest/node:v1.29.2
 
 .PHONY: kind-delete-cluster
 kind-delete-cluster:
