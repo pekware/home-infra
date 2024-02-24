@@ -21,23 +21,3 @@ spec:
         name: gitea
         namespace: gitea
       interval: 2h
-  values:
-    image:
-      repository: gitea/gitea
-      # https://github.com/go-gitea/gitea/releases
-      tag: 1.20.5
-      pullPolicy: IfNotPresent
-      rootless: true
-    service:
-      ssh:
-        type: NodePort
-        port: 222
-        nodePort: 32500
-    gitea:
-      config:
-        repository:
-          DEFAULT_PRIVATE: private
-    memcached:
-      enabled: false
-    postgresql:
-      enabled: false
