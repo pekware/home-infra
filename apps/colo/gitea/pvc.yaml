@@ -6,7 +6,7 @@ metadata:
 spec:
   storageClassName: nfs-csi-retain
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   resources:
     requests:
       storage: 50Gi

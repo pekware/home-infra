@@ -5,8 +5,9 @@ metadata:
   namespace: gitea
 spec:
   values:
+    replicaCount: 2
     strategy:
-      type: Recreate
+      type: RollingUpdate
     clusterDomain: gitea.pekware.club
     image:
       repository: gitea/gitea
@@ -31,6 +32,8 @@ spec:
       enabled: true
       create: false
       claimName: gitea
+      accessModes:
+        - ReadWriteMany
     gitea:
       admin:
         existingSecret: gitea-admin-secret
@@ -44,7 +47,7 @@ spec:
         cache:
           ADAPTER: memory
         queue:
-          TYPE: level
+          TYPE: channel
         webhook:
           ALLOWED_HOST_LIST: '*'
         RUN_MODE: prod
