@@ -6,7 +6,7 @@ resources:
   - cert-manager/
   - kube-prometheus-stack/
   - syncserver/
-  - minio-operator/
+  #- minio-vanilla/
   #- gitlab/
   #- bitnami-postgresql/
   #- bitnami-redis/

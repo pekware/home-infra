@@ -12,5 +12,5 @@ resources:
   - kube-prometheus-stack/
   - descheduler/
   - metallb/
-  - minio-operator/
+  - minio-vanilla/
   - csi-driver-nfs/
