@@ -35,3 +35,5 @@ spec:
 
     buckets:
       - name: velero
+      - name: drone-cache
+      - name: gitlab-runner-cache
