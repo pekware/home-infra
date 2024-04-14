@@ -4,8 +4,8 @@ metadata:
   name: nfs-csi-delete
 provisioner: nfs.csi.k8s.io
 parameters:
-  server: data.pekware.xyz
-  share: /mnt/pool/volumes/development/
+  server: nfs-u20.pekware.xyz
+  share: /volumes/development/
   subdir: ${pvc.metadata.namespace}/${pvc.metadata.name}/
 reclaimPolicy: Delete
 volumeBindingMode: Immediate
