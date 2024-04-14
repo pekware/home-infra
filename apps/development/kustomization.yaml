@@ -4,3 +4,4 @@ resources:
   - ingress-nginx/
   - csi-driver-nfs/
   - bitnami-nginx/
+  - gitea/
