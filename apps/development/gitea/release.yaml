@@ -38,7 +38,7 @@ spec:
     gitea:
       admin:
         username: demo72
-        password: demo72
+        password: demo72qwerty
       ## https://docs.gitea.com/administration/config-cheat-sheet
       config:
         database:
