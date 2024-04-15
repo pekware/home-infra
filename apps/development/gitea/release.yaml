@@ -13,7 +13,7 @@ spec:
       type: Recreate
     image:
       # https://github.com/go-gitea/gitea/releases
-      tag: 1.20.1
+      tag: 1.21.10
     clusterDomain: gitea.development.pekware.club
     ingress:
       enabled: true
