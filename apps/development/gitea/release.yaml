@@ -37,8 +37,8 @@ spec:
         - ReadWriteMany
     gitea:
       admin:
-        username: demo72
-        password: demo72qwerty
+        existingSecret: gitea-admin-secret
+        email: king.phil@gmail.com
       ## https://docs.gitea.com/administration/config-cheat-sheet
       config:
         database:

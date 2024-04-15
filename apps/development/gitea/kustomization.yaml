@@ -6,6 +6,7 @@ metadata:
 resources:
   - ../../base/gitea/
   - sealed.secret.star.development.pekware.club.yaml
+  - sealed.secret.gitea-admin.yaml
   - pvc.yaml
 patches:
   - path: release.yaml
