@@ -4,17 +4,20 @@ metadata:
   name: gitea
   namespace: gitea
 spec:
-  chart:
-    spec:
-      # https://gitea.com/gitea/helm-chart/tags
-      version: 9.0.x
   values:
+    replicaCount: 1
     strategy:
-      type: Recreate
+      type: RollingUpdate
+    clusterDomain: gitea.development.pekware.club
     image:
+      repository: gitea/gitea
       # https://github.com/go-gitea/gitea/releases
       tag: 1.21.10
-    clusterDomain: gitea.development.pekware.club
+      pullPolicy: IfNotPresent
+      rootless: true
+    service:
+      ssh:
+        port: 222
     ingress:
       enabled: true
       hosts:
@@ -30,10 +33,13 @@ spec:
       enabled: true
       create: false
       claimName: gitea
+      accessModes:
+        - ReadWriteMany
     gitea:
       admin:
         username: demo72
         password: demo72
+      ## https://docs.gitea.com/administration/config-cheat-sheet
       config:
         database:
           DB_TYPE: sqlite3
@@ -42,11 +48,15 @@ spec:
         cache:
           ADAPTER: memory
         queue:
-          TYPE: level
+          TYPE: channel
         webhook:
           ALLOWED_HOST_LIST: '*'
         RUN_MODE: dev
         APP_NAME: "Gitea (development): Git with a cup of tea"
+        repository:
+          DEFAULT_BRANCH: main
+          ENABLE_PUSH_CREATE_ORG: true
+          DEFAULT_PRIVATE: private
         server:
           SSH_PORT: 222
           ROOT_URL: https://gitea.development.pekware.club
@@ -54,8 +64,6 @@ spec:
           DOMAIN: gitea.development.pekware.club
         actions:
           enabled: true
-        repository:
-          enable_push_create_org: true
     mysql:
       enabled: false
 
