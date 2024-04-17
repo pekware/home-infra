@@ -12,7 +12,7 @@ spec:
     image:
       repository: gitea/gitea
       # https://github.com/go-gitea/gitea/releases
-      tag: 1.21.6
+      tag: 1.21.10
       pullPolicy: IfNotPresent
       rootless: true
     service:
