@@ -9,7 +9,7 @@ resources:
   - minio-vanilla/
   #- gitlab/
   #- bitnami-postgresql/
-  #- bitnami-redis/
+  - bitnami-redis/
   #- gitlab-runner/
   - metallb/
   - csi-driver-nfs/

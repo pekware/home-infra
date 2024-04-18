@@ -21,14 +21,9 @@ spec:
       existingSecret: redis
 
     master:
+      kind: Deployment
       service:
         type: ClusterIP
       persistence:
         enabled: true
-        storageClass: nfs-csi-retain
         size: 8Gi
-
-    replica:
-      replicaCount: 1
-      persistence:
-        enabled: true
