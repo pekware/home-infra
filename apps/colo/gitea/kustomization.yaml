@@ -7,6 +7,7 @@ resources:
   - sealed-secret.gitea-admin.yaml
   - pvc.yaml
   - ../../base/gitea/
+  - secret.star.pekware.club.yaml
 patches:
   - path: release.yaml
     target:
