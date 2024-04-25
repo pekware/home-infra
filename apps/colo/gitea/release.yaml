@@ -51,7 +51,7 @@ spec:
         webhook:
           ALLOWED_HOST_LIST: '*'
         RUN_MODE: prod
-        APP_NAME: "Gitea: Git with a cup of tea"
+        APP_NAME: 'Gitea: Git with a cup of tea'
         repository:
           DEFAULT_BRANCH: main
           ENABLE_PUSH_CREATE_ORG: true
