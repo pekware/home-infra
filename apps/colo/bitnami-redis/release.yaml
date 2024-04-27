@@ -1,0 +1,29 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: redis
+  namespace: bitnami-redis
+spec:
+  values:
+    global:
+      storageClass: nfs-csi-retain
+
+    image:
+      registry: docker.io
+      repository: bitnami/redis
+      # https://hub.docker.com/r/bitnami/redis/tags
+      tag: 7.0-debian-12
+      pullPolicy: IfNotPresent
+
+    architecture: standalone
+
+    auth:
+      existingSecret: redis
+
+    master:
+      kind: Deployment
+      service:
+        type: ClusterIP
+      persistence:
+        enabled: true
+        size: 8Gi
