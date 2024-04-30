@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - ../apps/sealed-secrets/
   - ../apps/cert-manager/
+  - sealed.secret.star.development.pekware.club.yaml
