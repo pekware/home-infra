@@ -8,6 +8,8 @@ spec:
   values:
     controller:
       replicaCount: 1
+      updateStrategy:
+        type: Recreate
       hostNetwork: true
       nodeSelector:
         ingress-ready: "true"
