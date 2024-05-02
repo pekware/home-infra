@@ -10,6 +10,8 @@ spec:
       replicaCount: 1
       updateStrategy:
         type: Recreate
+      extraArgs:
+        default-ssl-certificate: "kube-system/star.development.pekware.club"
       hostNetwork: true
       nodeSelector:
         ingress-ready: "true"
