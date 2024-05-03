@@ -26,8 +26,7 @@ spec:
             - path: /
               pathType: Prefix
       tls:
-        - secretName: star.development.pekware.club
-          hosts:
+        - hosts:
             - gitea.development.pekware.club
     persistence:
       enabled: true
