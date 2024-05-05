@@ -5,3 +5,4 @@ resources:
   - csi-driver-nfs/
   - bitnami-nginx/
   - gitea/
+  - podinfo

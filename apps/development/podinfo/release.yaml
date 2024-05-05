@@ -16,4 +16,3 @@ spec:
       tls:
       - hosts:
           - podinfo.development.pekware.club
-        secretName: star.development.pekware.club
