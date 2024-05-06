@@ -6,3 +6,4 @@ resources:
   - bitnami-nginx/
   - gitea/
   - podinfo
+  - sealed.secret.star.development.pekware.club.yaml
