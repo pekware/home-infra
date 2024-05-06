@@ -17,5 +17,4 @@ spec:
       extraTls:
       - hosts:
           - nginx.development.pekware.club
-        secretName: star.development.pekware.club
     staticSitePVC: nginx
