@@ -12,7 +12,7 @@ do
 done
 
 kubectl create -f $HOME/povault/sealed-secrets/$CONTEXT
-flux bootstrap github \
+/usr/local/bin/flux bootstrap github \
   --owner=kingphil \
   --repository=home-infra \
   --branch=$BRANCH \
