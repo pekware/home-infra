@@ -17,7 +17,7 @@ spec:
         [[runners]]
           [runners.kubernetes]
             namespace = "{{.Release.Namespace}}"
-            image = "ubuntu:22.04"
+            image = "ubuntu:24.04"
           [runners.cache]
             Type = "s3"
             Path = "runner"
