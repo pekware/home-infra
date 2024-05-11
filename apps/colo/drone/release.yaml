@@ -5,6 +5,11 @@ metadata:
   namespace: drone
 spec:
   values:
+    image:
+      repository: drone/drone
+      # https://hub.docker.com/r/drone/drone/tags
+      tag: 2.20.0
+      pullPolicy: IfNotPresent
     ingress:
       enabled: true
       hosts:
