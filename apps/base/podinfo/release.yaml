@@ -11,6 +11,7 @@ spec:
   chart:
     spec:
       chart: podinfo
+      # https://artifacthub.io/packages/helm/podinfo/podinfo
       version: "6.x"
       sourceRef:
         kind: HelmRepository
