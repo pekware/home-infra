@@ -5,7 +5,7 @@ resources:
   - ingress-nginx/
   - cert-manager/
   - kube-prometheus-stack/
-  ##- syncserver/
+  - syncserver/
   - minio-vanilla/
   #- gitlab/
   #- bitnami-postgresql/
