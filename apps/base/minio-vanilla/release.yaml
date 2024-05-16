@@ -10,7 +10,7 @@ spec:
   interval: 2h
   chart:
     spec:
-      # https://artifacthub.io/packages/helm/minio/minio
+      # https://github.com/minio/minio/blob/master/helm/minio/Chart.yaml
       version: "5.x"
       chart: minio
       sourceRef:
