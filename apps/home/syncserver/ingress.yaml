@@ -5,6 +5,7 @@ metadata:
   name: syncserver
   namespace: syncserver
 spec:
+  ingressClassName: nginx
   rules:
   - host: syncserver.home.pekware.club
     http:
