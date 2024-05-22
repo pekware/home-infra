@@ -25,6 +25,11 @@ k3d-cluster-create:
 	KUBECONFIG=$$HOME/.kube/k3d k3d cluster create lab --config misc/development/k3d/k3d.yaml
 	kubectl --kubeconfig $$HOME/.kube/k3d create -f ./misc/development/k3d/calico.yaml
 
+.PHONY: k3d-cluster-create-by-version
+k3d-cluster-create-by-version:
+	# https://hub.docker.com/r/rancher/k3s/tags
+	KUBECONFIG=$$HOME/.kube/k3d k3d cluster create lab --config misc/development/k3d/k3d.yaml --image=rancher/k3s:${K8S_VERSION}
+
 .PHONY: k3d-cluster-delete
 k3d-cluster-delete:
 	KUBECONFIG=$$HOME/.kube/k3d k3d cluster delete lab
