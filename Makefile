@@ -25,9 +25,10 @@ k3d-cluster-create:
 	KUBECONFIG=$$HOME/.kube/k3d k3d cluster create lab --config misc/development/k3d/k3d.yaml
 	kubectl --kubeconfig $$HOME/.kube/k3d create -f ./misc/development/k3d/calico.yaml
 
+# https://hub.docker.com/r/rancher/k3s/tags
+# e.g. K8S_VERSION=v1.30.1-k3s1 make k3d-cluster-create-by-version
 .PHONY: k3d-cluster-create-by-version
 k3d-cluster-create-by-version:
-	# https://hub.docker.com/r/rancher/k3s/tags
 	KUBECONFIG=$$HOME/.kube/k3d k3d cluster create lab --config misc/development/k3d/k3d.yaml --image=rancher/k3s:${K8S_VERSION}
 
 .PHONY: k3d-cluster-delete
@@ -40,9 +41,10 @@ kind-create-cluster:
 	kind create cluster --name lab --kubeconfig $$HOME/.kube/kind --config misc/development/kind/kind.yaml
 	#kubectl --kubeconfig $$HOME/.kube/kind create -f ./misc/development/kind/calico.yaml
 
+# https://hub.docker.com/r/kindest/node/tags
+# e.g. K8S_VERSION=v1.30.0 make kind-create-cluster-by-version
 .PHONY: kind-create-cluster-by-version
 kind-create-cluster-by-version:
-	# https://hub.docker.com/r/kindest/node/tags
 	kind create cluster --name lab --kubeconfig $$HOME/.kube/kind --config misc/development/kind/kind.yaml --image kindest/node:${K8S_VERSION}
 
 .PHONY: kind-delete-cluster
