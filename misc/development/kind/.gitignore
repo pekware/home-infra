@@ -1,0 +1,3 @@
+kind.yaml
+!.gitignore
+!kind.yaml.sample

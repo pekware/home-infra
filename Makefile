@@ -39,7 +39,6 @@ k3d-cluster-delete:
 .PHONY: kind-create-cluster
 kind-create-cluster:
 	kind create cluster --name lab --kubeconfig $$HOME/.kube/kind --config misc/development/kind/kind.yaml
-	#kubectl --kubeconfig $$HOME/.kube/kind create -f ./misc/development/kind/calico.yaml
 
 # https://hub.docker.com/r/kindest/node/tags
 # e.g. K8S_VERSION=v1.30.0 make kind-create-cluster-by-version
