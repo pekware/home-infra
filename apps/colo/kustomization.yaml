@@ -10,7 +10,7 @@ resources:
   - drone-runner-docker/
   - gitlab-runner/
   #- kube-prometheus-stack/
-  - descheduler/
+  #- descheduler/
   - metallb/
   - minio-vanilla/
   - csi-driver-nfs/
