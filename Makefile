@@ -23,7 +23,6 @@ resume:
 .PHONY: k3d-cluster-create
 k3d-cluster-create:
 	KUBECONFIG=$$HOME/.kube/k3d k3d cluster create lab --config misc/development/k3d/k3d.yaml
-	kubectl --kubeconfig $$HOME/.kube/k3d create -f ./misc/development/k3d/calico.yaml
 
 # https://hub.docker.com/r/rancher/k3s/tags
 # e.g. K8S_VERSION=v1.30.1-k3s1 make k3d-cluster-create-by-version
