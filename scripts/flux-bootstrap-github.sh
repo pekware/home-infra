@@ -17,6 +17,7 @@ kubectl create -f $HOME/povault/sealed-secrets/$CONTEXT
   --repository=home-infra \
   --branch=$BRANCH \
   --path=clusters/$CONTEXT \
+  --components "source-controller,kustomize-controller,helm-controller" \
   --private=true \
   --personal=true \
   --token-auth \
