@@ -13,3 +13,4 @@ resources:
   #- gitlab-runner/
   - metallb/
   - csi-driver-nfs/
+  - mysql-operator/
