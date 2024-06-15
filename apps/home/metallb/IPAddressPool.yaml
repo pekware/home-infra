@@ -6,3 +6,4 @@ metadata:
 spec:
   addresses:
   - 172.16.0.36/32
+  - 172.16.0.37/32
