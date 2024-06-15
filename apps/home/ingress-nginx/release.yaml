@@ -17,4 +17,4 @@ spec:
     tcp:
       "5432": "bitnami-postgresql/postgresql:5432"
       "6379": "bitnami-redis/redis-master:6379"
-      "22": "gitlab/gitlab-gitlab-shell:22"
+      "222": "gitea/gitea-ssh:222"
