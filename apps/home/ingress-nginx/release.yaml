@@ -18,3 +18,4 @@ spec:
       "5432": "bitnami-postgresql/postgresql:5432"
       "6379": "bitnami-redis/redis-master:6379"
       "222": "gitea/gitea-ssh:222"
+      "3306": "mysql-innodbcluster/mysql-innodbcluster:3306"
