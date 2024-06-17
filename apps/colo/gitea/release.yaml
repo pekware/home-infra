@@ -12,7 +12,8 @@ spec:
         image:
             repository: gitea/gitea
             # https://github.com/go-gitea/gitea/releases
-            tag: 1.21.11
+            # https://gitea.com/gitea/helm-chart/src/branch/main/Chart.yaml
+            tag: 1.22.0
             pullPolicy: IfNotPresent
             rootless: true
         service:
@@ -67,6 +68,8 @@ spec:
         redis-cluster:
             enabled: false
         postgresql-ha:
+            enabled: false
+        test:
             enabled: false
 sops:
     kms: []
