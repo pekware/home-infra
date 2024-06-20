@@ -5,3 +5,5 @@ metadata:
   namespace: mariadb
 resources:
 - namespace.yaml
+- sealed.secret.mariadb-root.yaml
+- sealed.secret.mariadb-password.yaml
