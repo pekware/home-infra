@@ -17,3 +17,4 @@ spec:
     tcp:
       "222": "gitea/gitea-ssh:222"
       "6379": "bitnami-redis/redis-master:6379"
+      "3306": "mariadb/mariadb:3306"
