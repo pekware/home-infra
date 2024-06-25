@@ -1,9 +1,0 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
-kind: HelmRelease
-metadata:
-  name: mysql-operator
-  namespace: mysql-operator
-spec:
-  values:
-    envs:
-      k8sClusterDomain: cluster.local
