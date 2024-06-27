@@ -1,0 +1,20 @@
+apiVersion: mysql.oracle.com/v2
+kind: InnoDBCluster
+metadata:
+  name: mysql-innodbcluster
+  namespace: mysql-innodbcluster
+spec:
+  version: 8.4.0
+  secretName: root-user
+  tlsUseSelfSigned: true
+  instances: 3
+  router:
+    instances: 2
+  datadirVolumeClaimTemplate:
+    accessModes:
+    - ReadWriteOnce
+    storageClassName: nfs-csi-retain
+    resources:
+      requests:
+        storage: 5G
+  imagePullPolicy: IfNotPresent
