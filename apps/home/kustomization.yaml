@@ -13,5 +13,5 @@ resources:
   #- gitlab-runner/
   - metallb/
   - csi-driver-nfs/
-  - mariadb/
+  #- mariadb/
   - mysql-innodbcluster/
