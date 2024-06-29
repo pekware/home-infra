@@ -5,7 +5,6 @@ metadata:
   namespace: syncserver
 resources:
   - namespace.yaml
-  - pvc.yaml
   - sealed.secret.syncserver.yaml
   - deployment.yaml
   - svc.yaml
