@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
     app: syncserver
   name: syncserver
@@ -11,7 +10,6 @@ spec:
   selector:
     matchLabels:
       app: syncserver
-  strategy: {}
   template:
     metadata:
       creationTimestamp: null
@@ -51,4 +49,3 @@ spec:
       - name: database
         persistentVolumeClaim:
           claimName: syncserver
-status: {}
