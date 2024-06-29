@@ -28,7 +28,10 @@ spec:
               name: syncserver
               key: SYNCSERVER_SECRET
         - name: SYNCSERVER_SQLURI
-          value: sqlite:////home/app/syncserver.db
+          valueFrom:
+            secretKeyRef:
+              name: syncserver
+              key: SYNCSERVER_SQLURI
         - name: SYNCSERVER_BATCH_UPLOAD_ENABLED
           value: "true"
         - name: SYNCSERVER_FORCE_WSGI_ENVIRON
