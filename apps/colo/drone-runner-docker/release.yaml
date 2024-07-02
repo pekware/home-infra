@@ -10,6 +10,8 @@ spec:
       ## https://github.com/drone/charts/blob/master/charts/drone-runner-docker/values.yaml
       tag: "1.8"
     dind:
+      # https://hub.docker.com/_/docker/tags
+      tag: 27-dind
       commandArgs:
         - --host
         - tcp://localhost:2375
