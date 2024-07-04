@@ -5,3 +5,5 @@ metadata:
   namespace: bitnami-wordpress
 resources:
   - ../../base/bitnami-wordpress/
+  - sealed.secret.wordpress-mariadb.yaml
+  - sealed.secret.wordpress-password.yaml
