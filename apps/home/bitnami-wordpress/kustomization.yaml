@@ -7,3 +7,7 @@ resources:
   - ../../base/bitnami-wordpress/
   - sealed.secret.wordpress-mariadb.yaml
   - sealed.secret.wordpress-password.yaml
+patches:
+  - path: release.yaml
+    target:
+      kind: HelmRelease

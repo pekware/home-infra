@@ -1,0 +1,40 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: bitnami-wordpress
+  namespace: bitnami-wordpress
+spec:
+  values:
+    wordpressUsername: pekware
+    existingSecret: wordpress-password
+
+    replicaCount: 1
+
+    service:
+      type: ClusterIP
+
+    ingress:
+      enabled: true
+      ingressClassName: nginx
+      hostname: wordpress.home.pekware.club
+      tls: true
+      selfSigned: false
+
+    persistence:
+      enabled: true
+      storageClass: nfs-csi-retain
+      size: 1Gi
+
+    mariadb:
+      enabled: false
+
+    externalDatabase:
+      host: mysql-innodbcluster.mysql-innodbcluster.svc
+      port: 3306
+      user: bn_wordpress
+      database: bitnami_wordpress
+      existingSecret: wordpress-mariadb
+
+    memcached:
+      enabled: false
