@@ -5,14 +5,16 @@ resources:
   - cert-manager/
   - ingress-nginx/
   #- podinfo/
-  - gitea/
-  - drone/
   - drone-runner-docker/
   - gitlab-runner/
   #- kube-prometheus-stack/
   #- descheduler/
   - metallb/
-  - minio-vanilla/
   - csi-driver-nfs/
+
+  ## stateful apps
+  - gitea/
+  - drone/
+  - minio-vanilla/
   - bitnami-redis/
   - mariadb/
