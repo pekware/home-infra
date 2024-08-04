@@ -5,10 +5,10 @@ resources:
   - ingress-nginx/
   - cert-manager/
   #- kube-prometheus-stack/
-  - syncserver/
   - minio-vanilla/
   - bitnami-redis/
   - metallb/
   - csi-driver-nfs/
-  - mysql-innodbcluster/
-  - bitnami-wordpress/
+  ##- mysql-innodbcluster/
+  ##- syncserver/
+  ##- bitnami-wordpress/
