@@ -5,4 +5,7 @@ metadata:
   namespace: gha-runner-controller
 resources:
   - ../../base/gha-runner-controller/
-  - release.yaml
+patches:
+  - path: release.yaml
+    target:
+      kind: HelmRelease

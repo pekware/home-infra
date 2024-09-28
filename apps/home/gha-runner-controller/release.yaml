@@ -4,15 +4,3 @@ kind: HelmRelease
 metadata:
   name: gha-runner-controller
   namespace: gha-runner-controller
-spec:
-  chart:
-    # https://github.com/actions/actions-runner-controller
-    spec:
-      chart: charts/gha-runner-scale-set-controller
-      reconcileStrategy: ChartVersion
-      sourceRef:
-        kind: GitRepository
-        name: gha-runner-controller
-        namespace: gha-runner-controller
-      version: 0.9.x
-  interval: 2h0m0s
