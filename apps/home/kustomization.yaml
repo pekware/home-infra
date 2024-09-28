@@ -12,3 +12,4 @@ resources:
   ##- mysql-innodbcluster/
   - syncserver/
   ##- bitnami-wordpress/
+  - gha-runner-controller

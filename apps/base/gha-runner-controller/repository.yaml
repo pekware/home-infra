@@ -1,0 +1,11 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: gha-runner-controller
+  namespace: gha-runner-controller
+spec:
+  interval: 5m0s
+  url: https://github.com/actions/actions-runner-controller
+  ref:
+    branch: master
