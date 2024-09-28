@@ -8,4 +8,5 @@ spec:
   interval: 5m0s
   url: https://github.com/actions/actions-runner-controller
   ref:
+    # note: version is further specified in the related HelmRelease
     branch: master
