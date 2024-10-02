@@ -19,6 +19,7 @@ spec:
   values:
     githubConfigUrl: "https://github.com/pekware"
     githubConfigSecret: pre-defined-secret
-    minRunners: 1
+    minRunners: 0
+    maxRunners: 10
     containerMode:
       type: dind
