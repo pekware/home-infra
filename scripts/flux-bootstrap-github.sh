@@ -13,7 +13,7 @@ done
 
 kubectl create -f $HOME/povault/sealed-secrets/$CONTEXT
 /usr/local/bin/flux bootstrap github \
-  --owner=kingphil \
+  --owner=pekware \
   --repository=home-infra \
   --branch=$BRANCH \
   --path=clusters/$CONTEXT \
