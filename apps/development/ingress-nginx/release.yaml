@@ -21,3 +21,5 @@ spec:
         effect: NoSchedule
       service:
         enabled: false
+    tcp:
+      "222": "gitea/gitea-ssh:222"
