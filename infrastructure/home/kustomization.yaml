@@ -4,5 +4,3 @@ resources:
   - ../apps/sealed-secrets/
   - ../apps/cert-manager/
   - ../apps/metallb/
-  - ../apps/mariadb-operator/
-  - ../apps/mysql-operator/
