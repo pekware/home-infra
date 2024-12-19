@@ -1,12 +1,10 @@
 ---
 apiVersion: source.toolkit.fluxcd.io/v1
-kind: GitRepository
+kind: HelmRepository
 metadata:
   name: gha-runner-controller
   namespace: gha-runner-controller
 spec:
   interval: 5m0s
-  url: https://github.com/actions/actions-runner-controller
-  ref:
-    # note: version is further specified in the related HelmRelease
-    branch: master
+  url: oci://ghcr.io/actions/actions-runner-controller-charts
+  type: oci
