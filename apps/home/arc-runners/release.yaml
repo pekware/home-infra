@@ -14,7 +14,7 @@ spec:
         kind: HelmRepository
         name: arc-runners
         namespace: arc-runners
-      version: 0.10.0
+      version: 0.10.x
   interval: 2h0m0s
   values:
     githubConfigUrl: "https://github.com/pekware"

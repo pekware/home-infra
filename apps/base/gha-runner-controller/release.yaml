@@ -14,5 +14,5 @@ spec:
         kind: HelmRepository
         name: gha-runner-controller
         namespace: gha-runner-controller
-      version: 0.10.0
+      version: 0.10.x
   interval: 2h0m0s
