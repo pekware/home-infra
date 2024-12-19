@@ -13,4 +13,4 @@ resources:
   - syncserver/
   ##- bitnami-wordpress/
   - gha-runner-controller
-  #- arc-runners/
+  - arc-runners/

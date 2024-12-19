@@ -8,13 +8,13 @@ spec:
   chart:
     # https://github.com/actions/actions-runner-controller
     spec:
-      chart: charts/gha-runner-scale-set
+      chart: gha-runner-scale-set
       reconcileStrategy: ChartVersion
       sourceRef:
-        kind: GitRepository
-        name: gha-runner-controller
-        namespace: gha-runner-controller
-      version: 0.9.x
+        kind: HelmRepository
+        name: arc-runners
+        namespace: arc-runners
+      version: 0.10.0
   interval: 2h0m0s
   values:
     githubConfigUrl: "https://github.com/pekware"
