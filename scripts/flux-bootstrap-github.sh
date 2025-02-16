@@ -11,7 +11,7 @@ do
   esac
 done
 
-kubectl create -f $HOME/povault/sealed-secrets/$CONTEXT
+kubectl create -f $HOME/povault/k8s-secrets/$CONTEXT
 /usr/local/bin/flux bootstrap github \
   --owner=pekware \
   --repository=home-infra \
