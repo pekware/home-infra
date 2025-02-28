@@ -27,3 +27,7 @@ options:
       - arg: --node-taint=node-role.kubernetes.io/control-plane:NoSchedule
         nodeFilters:
           - server:*
+      ## for public cluster
+      - arg: --tls-san=$HOSTNAME
+        nodeFilters:
+          - server:*
