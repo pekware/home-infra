@@ -13,7 +13,7 @@ spec:
     spec:
       chart: metallb
       # https://artifacthub.io/packages/helm/metallb/metallb
-      version: "0.x"
+      version: "0.14.x"
       sourceRef:
         kind: HelmRepository
         name: metallb
