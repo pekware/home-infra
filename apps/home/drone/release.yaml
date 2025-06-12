@@ -22,12 +22,12 @@ spec:
           - drone.home.pekware.club
     persistentVolume:
       existingClaim: drone
-    extraSecretNamesForEnvFrom:
-      - my-drone-secrets
+
+    # https://docs.drone.io/server/provider/gitea/
     env:
       DRONE_SERVER_HOST: drone.home.pekware.club
       DRONE_SERVER_PROTO: https
-      # https://docs.drone.io/server/provider/gitea/
-      DRONE_GITEA_CLIENT_ID: a2ecffcb-6405-464f-a9f3-954a05286fbe
       DRONE_GITEA_SERVER: https://gitea.home.pekware.club
       DRONE_USER_CREATE: username:king.phil,admin:true
+    extraSecretNamesForEnvFrom:
+      - my-drone-secrets
