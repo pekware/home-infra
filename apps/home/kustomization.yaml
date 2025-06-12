@@ -15,3 +15,4 @@ resources:
   - gha-runner-controller/
   - arc-runners/
   - drone/
+  - drone-runner-docker/
