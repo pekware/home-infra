@@ -14,3 +14,4 @@ resources:
   ##- bitnami-wordpress/
   - gha-runner-controller/
   - arc-runners/
+  - drone/
