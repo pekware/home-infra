@@ -8,27 +8,28 @@ spec:
     replicaCount: 2
     strategy:
       type: RollingUpdate
-    clusterDomain: gitea.pekware.club
+    clusterDomain: gitea.home.pekware.club
     image:
       repository: gitea/gitea
       # https://github.com/go-gitea/gitea/releases
       # https://gitea.com/gitea/helm-chart/src/branch/main/Chart.yaml
-      tag: 1.22.3
+      tag: 1.23.8
       pullPolicy: IfNotPresent
       rootless: true
     service:
       ssh:
         port: 222
     ingress:
+      apiVersion: networking.k8s.io/v1
       enabled: true
       hosts:
-        - host: gitea.pekware.club
+        - host: gitea.home.pekware.club
           paths:
           - path: /
             pathType: Prefix
       tls:
         - hosts:
-          - gitea.pekware.club
+          - gitea.home.pekware.club
     persistence:
       enabled: true
       create: false
@@ -38,14 +39,32 @@ spec:
     gitea:
       admin:
         existingSecret: gitea-admin-secret
+        passwordMode: initialOnlyNoReset
         email: king.phil@gmail.com
+      additionalConfigFromEnvs:
+        - name: GITEA__DATABASE__PASSWD
+          valueFrom:
+            secretKeyRef:
+              name: gitea-extra-secrets
+              key: database_password
+        - name: GITEA__SESSION__PROVIDER_CONFIG
+          valueFrom:
+            secretKeyRef:
+              name: gitea-extra-secrets
+              key: session_provider_config
       ## https://docs.gitea.com/administration/config-cheat-sheet
       config:
         database:
-          DB_TYPE: sqlite3
+          ## https://docs.gitea.com/installation/database-prep
+          DB_TYPE: mysql
+          HOST: mariadb
+          NAME: giteadb
+          USER: gitea
+          ## note: PASSWD in "extra secrets" above
+          #SCHEMA: gitea
         session:
           PROVIDER: redis
-          PROVIDER_CONFIG: ENC[AES256_GCM,data:J5ikv0poq+8vNd9/gg1fpZWmu6AnYuQAjwOQ0cvtnXyfWjwaLgxU8NvRrJmc8+PkHtJBERhCZc/aHrXvDyV6ptdXpBFvsHMPv347bNlUEg==,iv:dfLrcqJ5JhdPVpeXx+reYW7nz1isMTZYrXltHtMHewg=,tag:7w7v1K0KCIDuyI7h7Gn8EA==,type:str]
+          ## note: PROVIDER_CONFIG in "extra secrets" above
         cache:
           ADAPTER: memory
         queue:
@@ -60,9 +79,27 @@ spec:
           DEFAULT_PRIVATE: private
         server:
           SSH_PORT: 222
-          ROOT_URL: https://gitea.pekware.club
+          ROOT_URL: https://gitea.home.pekware.club
           PROTOCOL: http
-          DOMAIN: gitea.pekware.club
+          DOMAIN: gitea.home.pekware.club
+    actions:
+      enabled: true
+      statefulset:
+        actRunner:
+          config: |
+            log:
+              level: info
+            cache:
+              enabled: true
+            runner:
+              capacity: 4
+              # https://gitea.com/gitea/act_runner/src/branch/main/internal/app/cmd/register.go#L93
+              # https://hub.docker.com/r/gitea/runner-images/tags
+              labels:
+                - "act-latest:docker://gitea/runner-images:ubuntu-latest"
+                - "act-latest-slim:docker://gitea/runner-images:ubuntu-latest-slim"
+      existingSecret: gitea-admin-secret
+      existingSecretKey: token
     mysql:
       enabled: false
     redis-cluster:
@@ -71,34 +108,3 @@ spec:
       enabled: false
     test:
       enabled: false
-sops:
-  kms: []
-  gcp_kms: []
-  azure_kv: []
-  hc_vault: []
-  age: []
-  lastmodified: "2024-04-29T21:03:49Z"
-  mac: ENC[AES256_GCM,data:Ty7WV1+4OCGwBwfCxatJJVwzrJHyb2CMjX0YijtGBN9MumjM7c72Lc4tBhqYFegnpk6jHENch4XZLP/Z5bioTSs1WwWT8TGf6znD0E2BI358RN0c6Q3VN/i2DGa2f1o3GTSw8skgqppq+nyFY0FxJ86lzFGsaE7Xc7xADahRWRk=,iv:AQFwSyqEjKrJ7bVUi5cyaPShk2o07axlirG3uX3f0HY=,tag:W7hW24gU79GKUUwsRB84WA==,type:str]
-  pgp:
-    - created_at: "2024-04-29T21:03:49Z"
-      enc: |-
-      -----BEGIN PGP MESSAGE-----
-
-      hQIMA3KM7XXgqLeyARAAwHGtRTkeGWCbKuhPF+KqfLzIQp63H36sC33iq5jYNgk2
-      QDgbTEtjmpA1Nm0WO7CkFSZShJkANE3RFUsCit+5dKMHo8DWKfaMAIs/aiP0fr1i
-      +QrS2Gu9niIiK0/StbDFRzvMO+jqkGGCydaEgeUff/CpwOaigG9cpsWz0Lv+BjPi
-      qHkW5mmdLJmVlHm2lbYuOE0CnKfKS/ESCa2dUKEgCACIr+rmAFQiU5U6Vbc4YDMG
-      npnpntn2XsokSzPeOSeJwmQb6QzBLGhT1CK413x5jbXQEw+5pluatPtrrcJEmE24
-      297aw03ONuQk0y/qz2zeKKAgihmEh4YqJstqeAMYJki0TzQojgvMrBtD8kbWWsJA
-      dRm/wk8NY/62FuTmuJH/zT8SjkvZUVkadYZYWyRc4vyDLYOk4zheaB4hW1U9jDLL
-      MRUwot2bh/SmQtrL6My3SZi2sv3/oSLswujskIQKTW6zDVMNyor6KsHZyOmtvpnL
-      aFrrgZf/7H20kBXUESaxTOySiKmjOYykvXcVX6XSRKB+52F5VDJ6u9cSAl6W36vJ
-      oc/uWi2bjcaBrLAEyST9XZwqsphOmKpK4V6rKT5I8+J5pX/h0ht4OnCXaemFE0PI
-      TK8fqSfgisthxsu8aLEEHgUqmXYoWeOCTRqIOuamF350kE7YdF41OO+UpNi/3OLS
-      XgGiFghnfJ4BZeo8y3CjPtC2fCGNnqKIGyft23NCI0Ff1X2WcPPnrSEPaoHu9+M9
-      qnUfiBm4o3ukY3soXlqYlqddumFmXdppfYvcowJrziwX1H6qWQr8ELtqa+GmLZA=
-      =TqlL
-      -----END PGP MESSAGE-----
-      fp: A5EF2981F6A6047263DB8FC804FDAC0BFD33BA97
-  encrypted_regex: ^PROVIDER_CONFIG
-  version: 3.8.1
