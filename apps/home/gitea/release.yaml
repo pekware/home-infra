@@ -1,104 +1,104 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-    name: gitea
-    namespace: gitea
+  name: gitea
+  namespace: gitea
 spec:
-    values:
-        replicaCount: 2
-        strategy:
-            type: RollingUpdate
-        clusterDomain: gitea.pekware.club
-        image:
-            repository: gitea/gitea
-            # https://github.com/go-gitea/gitea/releases
-            # https://gitea.com/gitea/helm-chart/src/branch/main/Chart.yaml
-            tag: 1.22.3
-            pullPolicy: IfNotPresent
-            rootless: true
-        service:
-            ssh:
-                port: 222
-        ingress:
-            enabled: true
-            hosts:
-                - host: gitea.pekware.club
-                  paths:
-                    - path: /
-                      pathType: Prefix
-            tls:
-                - hosts:
-                    - gitea.pekware.club
-        persistence:
-            enabled: true
-            create: false
-            claimName: gitea
-            accessModes:
-                - ReadWriteMany
-        gitea:
-            admin:
-                existingSecret: gitea-admin-secret
-                email: king.phil@gmail.com
-            ## https://docs.gitea.com/administration/config-cheat-sheet
-            config:
-                database:
-                    DB_TYPE: sqlite3
-                session:
-                    PROVIDER: redis
-                    PROVIDER_CONFIG: ENC[AES256_GCM,data:J5ikv0poq+8vNd9/gg1fpZWmu6AnYuQAjwOQ0cvtnXyfWjwaLgxU8NvRrJmc8+PkHtJBERhCZc/aHrXvDyV6ptdXpBFvsHMPv347bNlUEg==,iv:dfLrcqJ5JhdPVpeXx+reYW7nz1isMTZYrXltHtMHewg=,tag:7w7v1K0KCIDuyI7h7Gn8EA==,type:str]
-                cache:
-                    ADAPTER: memory
-                queue:
-                    TYPE: channel
-                webhook:
-                    ALLOWED_HOST_LIST: '*'
-                RUN_MODE: prod
-                APP_NAME: 'Gitea: Git with a cup of tea'
-                repository:
-                    DEFAULT_BRANCH: main
-                    ENABLE_PUSH_CREATE_ORG: true
-                    DEFAULT_PRIVATE: private
-                server:
-                    SSH_PORT: 222
-                    ROOT_URL: https://gitea.pekware.club
-                    PROTOCOL: http
-                    DOMAIN: gitea.pekware.club
-        mysql:
-            enabled: false
-        redis-cluster:
-            enabled: false
-        postgresql-ha:
-            enabled: false
-        test:
-            enabled: false
+  values:
+    replicaCount: 2
+    strategy:
+      type: RollingUpdate
+    clusterDomain: gitea.pekware.club
+    image:
+      repository: gitea/gitea
+      # https://github.com/go-gitea/gitea/releases
+      # https://gitea.com/gitea/helm-chart/src/branch/main/Chart.yaml
+      tag: 1.22.3
+      pullPolicy: IfNotPresent
+      rootless: true
+    service:
+      ssh:
+        port: 222
+    ingress:
+      enabled: true
+      hosts:
+        - host: gitea.pekware.club
+          paths:
+          - path: /
+            pathType: Prefix
+      tls:
+        - hosts:
+          - gitea.pekware.club
+    persistence:
+      enabled: true
+      create: false
+      claimName: gitea
+      accessModes:
+        - ReadWriteMany
+    gitea:
+      admin:
+        existingSecret: gitea-admin-secret
+        email: king.phil@gmail.com
+      ## https://docs.gitea.com/administration/config-cheat-sheet
+      config:
+        database:
+          DB_TYPE: sqlite3
+        session:
+          PROVIDER: redis
+          PROVIDER_CONFIG: ENC[AES256_GCM,data:J5ikv0poq+8vNd9/gg1fpZWmu6AnYuQAjwOQ0cvtnXyfWjwaLgxU8NvRrJmc8+PkHtJBERhCZc/aHrXvDyV6ptdXpBFvsHMPv347bNlUEg==,iv:dfLrcqJ5JhdPVpeXx+reYW7nz1isMTZYrXltHtMHewg=,tag:7w7v1K0KCIDuyI7h7Gn8EA==,type:str]
+        cache:
+          ADAPTER: memory
+        queue:
+          TYPE: channel
+        webhook:
+          ALLOWED_HOST_LIST: '*'
+        RUN_MODE: prod
+        APP_NAME: 'Gitea: Git with a cup of tea'
+        repository:
+          DEFAULT_BRANCH: main
+          ENABLE_PUSH_CREATE_ORG: true
+          DEFAULT_PRIVATE: private
+        server:
+          SSH_PORT: 222
+          ROOT_URL: https://gitea.pekware.club
+          PROTOCOL: http
+          DOMAIN: gitea.pekware.club
+    mysql:
+      enabled: false
+    redis-cluster:
+      enabled: false
+    postgresql-ha:
+      enabled: false
+    test:
+      enabled: false
 sops:
-    kms: []
-    gcp_kms: []
-    azure_kv: []
-    hc_vault: []
-    age: []
-    lastmodified: "2024-04-29T21:03:49Z"
-    mac: ENC[AES256_GCM,data:Ty7WV1+4OCGwBwfCxatJJVwzrJHyb2CMjX0YijtGBN9MumjM7c72Lc4tBhqYFegnpk6jHENch4XZLP/Z5bioTSs1WwWT8TGf6znD0E2BI358RN0c6Q3VN/i2DGa2f1o3GTSw8skgqppq+nyFY0FxJ86lzFGsaE7Xc7xADahRWRk=,iv:AQFwSyqEjKrJ7bVUi5cyaPShk2o07axlirG3uX3f0HY=,tag:W7hW24gU79GKUUwsRB84WA==,type:str]
-    pgp:
-        - created_at: "2024-04-29T21:03:49Z"
-          enc: |-
-            -----BEGIN PGP MESSAGE-----
+  kms: []
+  gcp_kms: []
+  azure_kv: []
+  hc_vault: []
+  age: []
+  lastmodified: "2024-04-29T21:03:49Z"
+  mac: ENC[AES256_GCM,data:Ty7WV1+4OCGwBwfCxatJJVwzrJHyb2CMjX0YijtGBN9MumjM7c72Lc4tBhqYFegnpk6jHENch4XZLP/Z5bioTSs1WwWT8TGf6znD0E2BI358RN0c6Q3VN/i2DGa2f1o3GTSw8skgqppq+nyFY0FxJ86lzFGsaE7Xc7xADahRWRk=,iv:AQFwSyqEjKrJ7bVUi5cyaPShk2o07axlirG3uX3f0HY=,tag:W7hW24gU79GKUUwsRB84WA==,type:str]
+  pgp:
+    - created_at: "2024-04-29T21:03:49Z"
+      enc: |-
+      -----BEGIN PGP MESSAGE-----
 
-            hQIMA3KM7XXgqLeyARAAwHGtRTkeGWCbKuhPF+KqfLzIQp63H36sC33iq5jYNgk2
-            QDgbTEtjmpA1Nm0WO7CkFSZShJkANE3RFUsCit+5dKMHo8DWKfaMAIs/aiP0fr1i
-            +QrS2Gu9niIiK0/StbDFRzvMO+jqkGGCydaEgeUff/CpwOaigG9cpsWz0Lv+BjPi
-            qHkW5mmdLJmVlHm2lbYuOE0CnKfKS/ESCa2dUKEgCACIr+rmAFQiU5U6Vbc4YDMG
-            npnpntn2XsokSzPeOSeJwmQb6QzBLGhT1CK413x5jbXQEw+5pluatPtrrcJEmE24
-            297aw03ONuQk0y/qz2zeKKAgihmEh4YqJstqeAMYJki0TzQojgvMrBtD8kbWWsJA
-            dRm/wk8NY/62FuTmuJH/zT8SjkvZUVkadYZYWyRc4vyDLYOk4zheaB4hW1U9jDLL
-            MRUwot2bh/SmQtrL6My3SZi2sv3/oSLswujskIQKTW6zDVMNyor6KsHZyOmtvpnL
-            aFrrgZf/7H20kBXUESaxTOySiKmjOYykvXcVX6XSRKB+52F5VDJ6u9cSAl6W36vJ
-            oc/uWi2bjcaBrLAEyST9XZwqsphOmKpK4V6rKT5I8+J5pX/h0ht4OnCXaemFE0PI
-            TK8fqSfgisthxsu8aLEEHgUqmXYoWeOCTRqIOuamF350kE7YdF41OO+UpNi/3OLS
-            XgGiFghnfJ4BZeo8y3CjPtC2fCGNnqKIGyft23NCI0Ff1X2WcPPnrSEPaoHu9+M9
-            qnUfiBm4o3ukY3soXlqYlqddumFmXdppfYvcowJrziwX1H6qWQr8ELtqa+GmLZA=
-            =TqlL
-            -----END PGP MESSAGE-----
-          fp: A5EF2981F6A6047263DB8FC804FDAC0BFD33BA97
-    encrypted_regex: ^PROVIDER_CONFIG
-    version: 3.8.1
+      hQIMA3KM7XXgqLeyARAAwHGtRTkeGWCbKuhPF+KqfLzIQp63H36sC33iq5jYNgk2
+      QDgbTEtjmpA1Nm0WO7CkFSZShJkANE3RFUsCit+5dKMHo8DWKfaMAIs/aiP0fr1i
+      +QrS2Gu9niIiK0/StbDFRzvMO+jqkGGCydaEgeUff/CpwOaigG9cpsWz0Lv+BjPi
+      qHkW5mmdLJmVlHm2lbYuOE0CnKfKS/ESCa2dUKEgCACIr+rmAFQiU5U6Vbc4YDMG
+      npnpntn2XsokSzPeOSeJwmQb6QzBLGhT1CK413x5jbXQEw+5pluatPtrrcJEmE24
+      297aw03ONuQk0y/qz2zeKKAgihmEh4YqJstqeAMYJki0TzQojgvMrBtD8kbWWsJA
+      dRm/wk8NY/62FuTmuJH/zT8SjkvZUVkadYZYWyRc4vyDLYOk4zheaB4hW1U9jDLL
+      MRUwot2bh/SmQtrL6My3SZi2sv3/oSLswujskIQKTW6zDVMNyor6KsHZyOmtvpnL
+      aFrrgZf/7H20kBXUESaxTOySiKmjOYykvXcVX6XSRKB+52F5VDJ6u9cSAl6W36vJ
+      oc/uWi2bjcaBrLAEyST9XZwqsphOmKpK4V6rKT5I8+J5pX/h0ht4OnCXaemFE0PI
+      TK8fqSfgisthxsu8aLEEHgUqmXYoWeOCTRqIOuamF350kE7YdF41OO+UpNi/3OLS
+      XgGiFghnfJ4BZeo8y3CjPtC2fCGNnqKIGyft23NCI0Ff1X2WcPPnrSEPaoHu9+M9
+      qnUfiBm4o3ukY3soXlqYlqddumFmXdppfYvcowJrziwX1H6qWQr8ELtqa+GmLZA=
+      =TqlL
+      -----END PGP MESSAGE-----
+      fp: A5EF2981F6A6047263DB8FC804FDAC0BFD33BA97
+  encrypted_regex: ^PROVIDER_CONFIG
+  version: 3.8.1
