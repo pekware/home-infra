@@ -16,3 +16,4 @@ resources:
   - arc-runners/
   - drone/
   - drone-runner-docker/
+  - gitea/

@@ -12,7 +12,6 @@ resources:
   - csi-driver-nfs/
 
   ## stateful apps
-  - gitea/
   - minio-vanilla/
   - bitnami-redis/
   ##- mariadb/
