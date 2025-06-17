@@ -15,7 +15,7 @@ spec:
     spec:
       chart: gitea
       # https://gitea.com/gitea/helm-chart/tags
-      version: 10.2.x
+      version: 10.x
       sourceRef:
         kind: HelmRepository
         name: gitea
