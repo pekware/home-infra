@@ -5,5 +5,5 @@ metadata:
   namespace: cert-manager
 resources:
   - sealed.secret.do-token.yaml
-  - clusterissuer-pekware.yaml
-  - certificate-pekware.yaml
+  - clusterissuer-home-pekware-club.yaml
+  - certificate-home-pekware-club.yaml

@@ -6,7 +6,7 @@ metadata:
 spec:
   secretName: acme-prod.star.home.pekware.club
   issuerRef:
-    name: letsencrypt-pekware
+    name: letsencrypt-home-pekware-club
     kind: ClusterIssuer
   commonName: 'home.pekware.club'
   dnsNames:
