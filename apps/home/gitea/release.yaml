@@ -10,10 +10,10 @@ spec:
       type: RollingUpdate
     clusterDomain: gitea.home.pekware.club
     image:
-      repository: gitea/gitea
+      repository: gitea
       # https://github.com/go-gitea/gitea/releases
       # https://gitea.com/gitea/helm-chart/src/branch/main/Chart.yaml
-      tag: 1.23.8
+      tag: 1.24.2
       pullPolicy: IfNotPresent
       rootless: true
     service:
