@@ -13,3 +13,4 @@ spec:
   - "codemonkeys.site"
   - "*.codemonkeys.site"
   - "*.home.codemonkeys.site"
+  - "*.demo.codemonkeys.site"
