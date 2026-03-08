@@ -10,7 +10,7 @@ resources:
   #- metallb/
   - csi-driver-nfs/
   ##- mysql-innodbcluster/
-  - syncserver/
+  #- syncserver/
   ##- bitnami-wordpress/
   - gha-runner-controller/
   #- arc-runners/
