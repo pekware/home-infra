@@ -4,9 +4,6 @@ metadata:
   name: gitea
   namespace: gitea
 spec:
-  dependsOn:
-  - name: ingress-nginx
-    namespace: ingress-nginx
   install:
     remediation:
       retries: 3
