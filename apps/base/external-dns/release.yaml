@@ -9,7 +9,7 @@ spec:
     spec:
       chart: external-dns
       # https://artifacthub.io/packages/helm/external-dns/external-dns
-      version: "1.x"
+      version: "1.20.x"
       sourceRef:
         kind: HelmRepository
         name: external-dns
